@@ -76,6 +76,9 @@ and open the template in the editor.
                 //var finalCost = MATH.floor(rmbCost);
                 document.getElementById('postage').value = postage;
                 //postage = 0;
+                //var fomular = euroCost + " & times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
+                //document.getElementById('calc').innerHTML = euroCost + " X " + EURO + " + " + packCost + " + " + postage;
+                document.getElementById('calc').innerHTML = euroCost + " &times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
                 document.getElementById('kilo').innerHTML = weight;
                 document.getElementById('gw').innerHTML = GW;
                 document.getElementById('euro').innerHTML = euroCost;
@@ -83,18 +86,20 @@ and open the template in the editor.
             }
         </script>
         <br>
+        <div>公式: <label id="calc"/></div>
+        <br>
         <div>PRE: <input type="text" id="pre" value="0" onBlur="doMath();" /></div>
         <div>1  : <input type="text" id="apt1" value="0" onBlur="doMath();" /></div>
         <div>2  : <input type="text" id="apt2" value="0" onBlur="doMath();" /></div>
         <div>3  : <input type="text" id="apt3" value="0" onchange="doMath();" /></div>
         <div>1+ : <input type="text" id="apt1plus" value="0" onchange="doMath();" /></div>
         <div>2+ : <input type="text" id="apt2plus" value="0" onBlur="doMath();" /></div>
-        <div>Postage: <input type="text" id="postage" value="0" onBlur="doMath();" /></div>
+        <div>包裹单: <input type="text" id="postage" value="0" onBlur="doMath();" /></div>
         <br>
         
-        <span>KILO: <label id="gw" /></span>
-        <span>NW: <label id="kilo" /></span>
-        <div>EURO: <label id="euro" /></div>
-        <div>Total: <label id="total" /></div>
+        <span>包裹重量（公斤）: <label id="gw" /></span>
+        <span>净重: <label id="kilo" /></span>
+        <div>价值（欧）: <label id="euro" /></div>
+        <div>总价: <label id="total" /></div>
     </body>
 </html>
