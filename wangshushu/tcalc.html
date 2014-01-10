@@ -20,75 +20,179 @@ and open the template in the editor.
                 var oneplusPrice = 9.45;
                 var twoplusPrice = 9.45;
 
-                var prenum = parseInt(document.getElementById('pre').value);
-                var onenum = parseInt(document.getElementById('apt1').value);
-                var twonum = parseInt(document.getElementById('apt2').value);
-                var threenum = parseInt(document.getElementById('apt3').value);
-                var oneplusnum = parseInt(document.getElementById('apt1plus').value);
-                var twoplusnum = parseInt(document.getElementById('apt2plus').value);
-                var postage = parseInt(document.getElementById('postage').value);
+                var aptpreval = document.getElementById('aptpre').value;
+                var aptprenum;
+                if(aptpreval == null || aptpreval == "")
+                {
+                    aptprenum = 0;
+                }
+                else
+                {
+                    aptprenum = parseInt(aptpreval);
+                }
+                
+                var apt1val = document.getElementById('apt1').value;
+                var apt1num;
+                if(apt1val == null || apt1val == "")
+                {
+                    apt1num = 0;
+                }
+                else
+                {
+                    apt1num = parseInt(apt1val);
+                }
+                
+                var apt2val = document.getElementById('apt2').value;
+                var apt2num;
+                if(apt2val == null || apt2val == "")
+                {
+                    apt2num = 0;
+                }
+                else
+                {
+                    apt2num = parseInt(apt2val);
+                }
+                
+                var apt3val = document.getElementById('apt3').value;
+                var apt3num;
+                if(apt3val == null || apt3val == "")
+                {
+                    apt3num = 0;
+                }
+                else
+                {
+                    apt3num = parseInt(apt3val);
+                }
+                
+                var apt1plusval = document.getElementById('apt1plus').value;
+                var apt1plusnum;
+                if(apt1plusval == null || apt1plusval == "")
+                {
+                    apt1plusnum = 0;
+                }
+                else
+                {
+                    apt1plusnum = parseInt(apt1plusval);
+                }
 
-                var weight = (prenum + onenum + twonum + threenum) * 0.8 + (oneplusnum + twoplusnum) * 0.6;
-                var GW = Math.ceil(weight) + 1;
-                var packCost = prenum + onenum +twonum + threenum;
-                var euroCost = prenum * prePrice + 
-                               onenum * onePrice +
-                               twonum * twoPrice + 
-                               threenum * threePrice + 
-                               oneplusnum * oneplusPrice +
-                               twoplusnum * twoplusPrice;
-                       
+                var apt2plusval = document.getElementById('apt2plus').value;
+                var apt2plusnum;
+                if(apt2plusval == null || apt2plusval == "")
+                {
+                    apt2plusnum = 0;
+                }
+                else
+                {
+                    apt2plusnum = parseInt(apt2plusval);
+                }
+        
+                var postval = document.getElementById('postage').value;
+                var postage;
+                if(postval == null || postval == "")
+                {
+                    postage = 0;
+                }
+                else
+                {
+                    postage = parseInt(postval);
+                }
+                 
+                var weight = (aptprenum + apt1num + apt2num + apt3num) * 0.8 + (apt1plusnum + apt2plusnum) * 0.6;
+                var GW
+                if(weight)
+                {
+                    GW = Math.ceil(weight) + 1;
+                }
+                else
+                {
+                    GW = 0;
+                }
+                var packCost = aptprenum + apt1num +apt2num + apt3num;
+                var euroCost = aptprenum * prePrice + 
+                               apt1num * onePrice +
+                               apt2num * twoPrice + 
+                               apt3num * threePrice + 
+                               apt1plusnum * oneplusPrice +
+                               apt2plusnum * twoplusPrice;
+                euroCost = parseFloat(Math.round(euroCost * 100) / 100).toFixed(2);
+                
                 if(postage == 0)
                 {
                     switch (GW)
                     {
                         case 3:
-                            postage = 200;
+                            postage = 180;
                             break;
                         case 4:
-                            postage = 200;
+                            postage = 190;
                             break;
                         case 5:
                             postage = 200;
                             break;                        
                         case 6:
-                            postage = 200;
-                            break;
-                        case 7:
                             postage = 220;
                             break;
-                        case 8:
+                        case 7:
                             postage = 240;
+                            break;
+                        case 8:
+                            postage = 260;
                             break;
                         case 9:
-                            postage = 240;
+                            postage = 280;
                             break;
                         case 10:
-                            postage = 240;
-                            break;                        
+                            postage = 300;
+                            break;
+                        case 11:
+                            postage = 320;
+                            break;                         
                         default:
                             postage = 0;
                     }    
                 }
+                if(weight == 0)
+                {
+                    postage = 0;
+                }
     
                 var rmbCost = euroCost * EURO + packCost + postage;
-                
-                //var finalCost = MATH.floor(rmbCost);
-                document.getElementById('postage').value = postage;
-                //postage = 0;
-                //var fomular = euroCost + " & times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
-                //document.getElementById('calc').innerHTML = euroCost + " X " + EURO + " + " + packCost + " + " + postage;
-                document.getElementById('calc').innerHTML = euroCost + " &times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
-                document.getElementById('kilo').innerHTML = weight;
-                document.getElementById('gw').innerHTML = GW;
-                document.getElementById('euro').innerHTML = euroCost;
-                document.getElementById('total').innerHTML = rmbCost;
+                rmbCost = rmbCost.toFixed(0);
+                if(!(isNaN(postage) ||
+                     isNaN(euroCost) ||
+                     isNaN(packCost) ||
+                     isNaN(rmbCost) ||
+                     isNaN(weight) ||
+                     isNaN(GW)))
+                {
+                    //var finalCost = MATH.floor(rmbCost);
+                    document.getElementById('postage').value = postage;
+                    //var fomular = euroCost + " & times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
+                    
+                    document.getElementById('calc').innerHTML = euroCost + " &times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
+                    document.getElementById('kilo').innerHTML = weight;
+                    document.getElementById('gw').innerHTML = GW;
+                    document.getElementById('euro').innerHTML = euroCost;
+                    document.getElementById('total').innerHTML = rmbCost;
+                }
+                else
+                {
+                    //var finalCost = MATH.floor(rmbCost);
+                    document.getElementById('postage').value = 0;
+                    //var fomular = euroCost + " & times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
+                    
+                    document.getElementById('calc').innerHTML = "";
+                    document.getElementById('kilo').innerHTML = 0;
+                    document.getElementById('gw').innerHTML = 0;
+                    document.getElementById('euro').innerHTML = 0;
+                    document.getElementById('total').innerHTML = 0;          
+                }
             }
         </script>
         <br>
         <div>公式: <label id="calc"/></div>
         <br>
-        <div>PRE: <input type="text" id="pre" value="0" onBlur="doMath();" /></div>
+        <div>PRE: <input type="text" id="aptpre" value="0" onBlur="doMath();" /></div>
         <div>1  : <input type="text" id="apt1" value="0" onBlur="doMath();" /></div>
         <div>2  : <input type="text" id="apt2" value="0" onBlur="doMath();" /></div>
         <div>3  : <input type="text" id="apt3" value="0" onchange="doMath();" /></div>
