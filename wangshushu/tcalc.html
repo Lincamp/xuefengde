@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <script>
             var EURO = 8.4;
-            function doMath() {         
+            function doMath(autoPost) {         
                 
                 var prePrice = 14.95;
                 var onePrice = 13.95;
@@ -86,18 +86,8 @@ and open the template in the editor.
                 {
                     apt2plusnum = parseInt(apt2plusval);
                 }
-        
-                var postval = document.getElementById('postage').value;
-                var postage;
-                if(postval == null || postval == "")
-                {
-                    postage = -1;
-                }
-                else
-                {
-                    postage = parseInt(postval);
-                }
-                 
+                
+                // Weight
                 var weight = (aptprenum + apt1num + apt2num + apt3num) * 0.8 + (apt1plusnum + apt2plusnum) * 0.6;
                 weight = parseFloat(Math.round(weight * 10) / 10).toFixed(1);
                 
@@ -110,18 +100,13 @@ and open the template in the editor.
                 {
                     GW = Math.ceil(weight) + 1;                    
                 }             
-                
-                var packCost = aptprenum + apt1num +apt2num + apt3num;
-                var euroCost = aptprenum * prePrice + 
-                               apt1num * onePrice +
-                               apt2num * twoPrice + 
-                               apt3num * threePrice + 
-                               apt1plusnum * oneplusPrice +
-                               apt2plusnum * twoplusPrice;
-                euroCost = parseFloat(Math.round(euroCost * 100) / 100).toFixed(2);
-                
-                if(postage == -1)
-                {
+ 
+                // Postage
+                var postage;
+                var postval = document.getElementById('postage').value;
+
+                if(autoPost == 1 || postval == null || postval == "")
+                {                    
                     switch (GW)
                     {
                         case 3:
@@ -153,13 +138,28 @@ and open the template in the editor.
                             break;                         
                         default:
                             postage = 0;
-                    }    
+                    }
+                    //document.write("!!!!!" + postage);
+                }
+                else
+                {
+                    postage = parseInt(postval);
                 }
                 
+                // Schutzfolie cost
+                var packCost = aptprenum + apt1num +apt2num + apt3num;
+                var euroCost = aptprenum * prePrice + 
+                               apt1num * onePrice +
+                               apt2num * twoPrice + 
+                               apt3num * threePrice + 
+                               apt1plusnum * oneplusPrice +
+                               apt2plusnum * twoplusPrice;
+                euroCost = parseFloat(Math.round(euroCost * 100) / 100).toFixed(2);
+                /*   
                 if(weight == 0)
                 {
                     postage = 0;
-                }
+                }*/
     
                 var rmbCost = euroCost * EURO + packCost + postage;
                 rmbCost = rmbCost.toFixed(0);
@@ -197,18 +197,23 @@ and open the template in the editor.
         <br>
         <div><label for="calc">计算:</label><span id="calc" class="result"></span></div>
         <br><br>
-        <div><label for="aptpre">PRE: </label> <input type="text" id="aptpre" value="0" onBlur="doMath();" /><br>
-             <label for="apt1">1: </label> <input type="text" id="apt1" value="0" onBlur="doMath();" /><br>
-             <label for="apt2">2: </label> <input type="text" id="apt2" value="0" onBlur="doMath();" /><br>
-             <label for="apt3">3: </label> <input type="text" id="apt3" value="0" onchange="doMath();" /><br>
-             <label for="apt1plus">1+: </label> <input type="text" id="apt1plus" value="0" onchange="doMath();" /><br>
-             <label for="apt2plus">2+: </label> <input type="text" id="apt2plus" value="0" onBlur="doMath();" /><br>
-             <label for="postage">包裹单:</label> <input type="text" id="postage" onBlur="doMath();" /></div><br>
-        <br>
+        <div><label for="aptpre">PRE: </label> <input type="text" id="aptpre" value="0" onBlur="doMath(1);" /><br>
+             <label for="apt1">1: </label> <input type="text" id="apt1" value="0" onBlur="doMath(1);" /><br>
+             <label for="apt2">2: </label> <input type="text" id="apt2" value="0" onBlur="doMath(1);" /><br>
+             <label for="apt3">3: </label> <input type="text" id="apt3" value="0" onchange="doMath(1);" /><br>
+             <label for="apt1plus">1+: </label> <input type="text" id="apt1plus" value="0" onchange="doMath(1);" /><br>
+             <label for="apt2plus">2+: </label> <input type="text" id="apt2plus" value="0" onBlur="doMath(1);" /><br>
+             <label for="postage">包裹单:</label> <input type="text" id="postage" onBlur="doMath(0);" /></div>
+        <br><br>
         <div><label>包裹重量:</label> <span id="gw" class="result"></span><br>
              <label>价值:</label> <span id="euro" class="result"></span><br>
              <label>总价:</label> <span id="total" class="result"></span><br>
         </div>
-       
+        
+        <br><br><br><br><br><br><br><br>
+        <div><label>*</label><span class="result"> 自动计算出的包裹单价格只是粗略价格</span><br>
+             <label>*</label><span class="result"> 汇率按照8.4计算</span><br>
+             <label>*</label><span class="result"> P、1、2、3段每罐多1元保护费</span><br>
+        </div>       
     </body>
 </html>
