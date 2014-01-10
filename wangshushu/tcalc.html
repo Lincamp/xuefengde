@@ -7,6 +7,7 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/inputCss.css">
     </head>
     <body>
         <script>
@@ -90,7 +91,7 @@ and open the template in the editor.
                 var postage;
                 if(postval == null || postval == "")
                 {
-                    postage = 0;
+                    postage = -1;
                 }
                 else
                 {
@@ -99,14 +100,15 @@ and open the template in the editor.
                  
                 var weight = (aptprenum + apt1num + apt2num + apt3num) * 0.8 + (apt1plusnum + apt2plusnum) * 0.6;
                 weight = parseFloat(Math.round(weight * 10) / 10).toFixed(1);
-                var GW
-                if(weight)
+                
+                var GW;
+                if(weight == 0)
                 {
-                    GW = Math.ceil(weight) + 1;
+                    GW = 0;
                 }
                 else
                 {
-                    GW = 0;
+                    GW = Math.ceil(weight) + 1;                    
                 }             
                 
                 var packCost = aptprenum + apt1num +apt2num + apt3num;
@@ -118,7 +120,7 @@ and open the template in the editor.
                                apt2plusnum * twoplusPrice;
                 euroCost = parseFloat(Math.round(euroCost * 100) / 100).toFixed(2);
                 
-                if(postage == 0)
+                if(postage == -1)
                 {
                     switch (GW)
                     {
@@ -153,6 +155,7 @@ and open the template in the editor.
                             postage = 0;
                     }    
                 }
+                
                 if(weight == 0)
                 {
                     postage = 0;
@@ -172,10 +175,10 @@ and open the template in the editor.
                     //var fomular = euroCost + " & times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
                     
                     document.getElementById('calc').innerHTML = euroCost + " &times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
-                    document.getElementById('kilo').innerHTML = weight;
-                    document.getElementById('gw').innerHTML = GW;
-                    document.getElementById('euro').innerHTML = euroCost;
-                    document.getElementById('total').innerHTML = rmbCost;
+                    //document.getElementById('kilo').innerHTML = weight + " 公斤  ";
+                    document.getElementById('gw').innerHTML = GW + " 公斤 （净重" + weight + " 公斤）";
+                    document.getElementById('euro').innerHTML = euroCost + " 欧";
+                    document.getElementById('total').innerHTML = rmbCost + " 元";
                 }
                 else
                 {
@@ -192,20 +195,20 @@ and open the template in the editor.
             }
         </script>
         <br>
-        <div>公式: <label id="calc"/></div>
+        <div><label for="calc">计算:</label><span id="calc" class="result"></span></div>
+        <br><br>
+        <div><label for="aptpre">PRE: </label> <input type="text" id="aptpre" value="0" onBlur="doMath();" /><br>
+             <label for="apt1">1: </label> <input type="text" id="apt1" value="0" onBlur="doMath();" /><br>
+             <label for="apt2">2: </label> <input type="text" id="apt2" value="0" onBlur="doMath();" /><br>
+             <label for="apt3">3: </label> <input type="text" id="apt3" value="0" onchange="doMath();" /><br>
+             <label for="apt1plus">1+: </label> <input type="text" id="apt1plus" value="0" onchange="doMath();" /><br>
+             <label for="apt2plus">2+: </label> <input type="text" id="apt2plus" value="0" onBlur="doMath();" /><br>
+             <label for="postage">包裹单:</label> <input type="text" id="postage" onBlur="doMath();" /></div><br>
         <br>
-        <div>PRE: <input type="text" id="aptpre" value="0" onBlur="doMath();" /></div>
-        <div>1  : <input type="text" id="apt1" value="0" onBlur="doMath();" /></div>
-        <div>2  : <input type="text" id="apt2" value="0" onBlur="doMath();" /></div>
-        <div>3  : <input type="text" id="apt3" value="0" onchange="doMath();" /></div>
-        <div>1+ : <input type="text" id="apt1plus" value="0" onchange="doMath();" /></div>
-        <div>2+ : <input type="text" id="apt2plus" value="0" onBlur="doMath();" /></div>
-        <div>包裹单: <input type="text" id="postage" value="0" onBlur="doMath();" /></div>
-        <br>
-        
-        <span>包裹重量（公斤）: <label id="gw" /></span>
-        <span>净重: <label id="kilo" /></span>
-        <div>价值（欧）: <label id="euro" /></div>
-        <div>总价: <label id="total" /></div>
+        <div><label>包裹重量:</label> <span id="gw" class="result"></span><br>
+             <label>价值:</label> <span id="euro" class="result"></span><br>
+             <label>总价:</label> <span id="total" class="result"></span><br>
+        </div>
+       
     </body>
 </html>
