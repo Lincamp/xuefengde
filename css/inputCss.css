@@ -1,0 +1,24 @@
+/* 
+    Document   : inputCss
+    Created on : Jan 10, 2014, 11:43:25 AM
+    Author     : wxue
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
+input{
+  display: inline-block;
+  float: left;
+}
