@@ -98,6 +98,7 @@ and open the template in the editor.
                 }
                  
                 var weight = (aptprenum + apt1num + apt2num + apt3num) * 0.8 + (apt1plusnum + apt2plusnum) * 0.6;
+                weight = parseFloat(Math.round(weight * 10) / 10).toFixed(1);
                 var GW
                 if(weight)
                 {
@@ -106,7 +107,8 @@ and open the template in the editor.
                 else
                 {
                     GW = 0;
-                }
+                }             
+                
                 var packCost = aptprenum + apt1num +apt2num + apt3num;
                 var euroCost = aptprenum * prePrice + 
                                apt1num * onePrice +
