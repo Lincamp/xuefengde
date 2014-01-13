@@ -12,8 +12,20 @@ root {
 
 body 
 {
-    background-image:url('cittext.gif');
+    background-image:url('cow small.jpg'), url('cittext.gif');
+    
+    background-repeat:no-repeat, repeat;
+
+    background-position:right top, left top;     
 }
+
+/*
+body 
+{
+    background-image:url('cow small.jpg');
+    background-repeat:no-repeat;
+    background-position:right top;     
+}*/
 
 label{
     display: inline-block;
