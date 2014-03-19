@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script>
+            function showUser(str)
+            {
+                if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function()
+                {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    {
+                        document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "getuser.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body>
+        <form name="input" action="tinsert.php" method="post" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>
+                        <select name="number">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="100">100</option><br>
+                        </select>
+                    </td>
+                    <td>
+                        Item name:*
+                        <input type="text" name="itemname">
+                    </td>
+                    <td>
+                        Type:
+                        <select name="type">
+                            <option value=""></option>    
+                            <option value="clothes">clothes</option>
+                            <option value="food">food</option>
+                            <option value="electronic device">electronic device</option>
+                            <option value="stationary">stationary</option>
+                            <option value="others">others</option>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="position">
+                            <option value="in">in</option>
+                            <option value="on">on</option>
+                            <option value="under">under</option>
+                            <option value="in front of">in front of</option>
+                            <option value="behind">behind</option>
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>
+                        Container: <input type="text" name="container">
+                    </td>
+                    <td>
+                        Room:
+                        <select name="room">
+                            <option value="living room">living room</option>
+                            <option value="bed room">bed room</option>
+                            <option value="storage room">storage room</option>
+                            <option value="kitchen">kitchen</option>
+                            <option value="bath room">bath room</option>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        Comment: <input type="text" name="comment"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type="submit" value="Submit"><br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <div id="txtHint"><b>Person info will be listed here.</b></div>
+    </body>
+</html>
