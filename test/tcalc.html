@@ -1,0 +1,105 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script>
+            var EURO = 8.4;
+            function doMath() {         
+                
+                var prePrice = 14.95;
+                var onePrice = 13.95;
+                var twoPrice = 13.95;
+                var threePrice = 13.95;
+                var oneplusPrice = 9.45;
+                var twoplusPrice = 9.45;
+
+                var prenum = parseInt(document.getElementById('pre').value);
+                var onenum = parseInt(document.getElementById('apt1').value);
+                var twonum = parseInt(document.getElementById('apt2').value);
+                var threenum = parseInt(document.getElementById('apt3').value);
+                var oneplusnum = parseInt(document.getElementById('apt1plus').value);
+                var twoplusnum = parseInt(document.getElementById('apt2plus').value);
+                var postage = parseInt(document.getElementById('postage').value);
+
+                var weight = (prenum + onenum + twonum + threenum) * 0.8 + (oneplusnum + twoplusnum) * 0.6;
+                var GW = Math.ceil(weight) + 1;
+                var packCost = prenum + onenum +twonum + threenum;
+                var euroCost = prenum * prePrice + 
+                               onenum * onePrice +
+                               twonum * twoPrice + 
+                               threenum * threePrice + 
+                               oneplusnum * oneplusPrice +
+                               twoplusnum * twoplusPrice;
+                       
+                if(postage == 0)
+                {
+                    switch (GW)
+                    {
+                        case 3:
+                            postage = 200;
+                            break;
+                        case 4:
+                            postage = 200;
+                            break;
+                        case 5:
+                            postage = 200;
+                            break;                        
+                        case 6:
+                            postage = 200;
+                            break;
+                        case 7:
+                            postage = 220;
+                            break;
+                        case 8:
+                            postage = 240;
+                            break;
+                        case 9:
+                            postage = 240;
+                            break;
+                        case 10:
+                            postage = 240;
+                            break;                        
+                        default:
+                            postage = 0;
+                    }    
+                }
+    
+                var rmbCost = euroCost * EURO + packCost + postage;
+                
+                //var finalCost = MATH.floor(rmbCost);
+                document.getElementById('postage').value = postage;
+                //postage = 0;
+                //var fomular = euroCost + " & times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
+                //document.getElementById('calc').innerHTML = euroCost + " X " + EURO + " + " + packCost + " + " + postage;
+                document.getElementById('calc').innerHTML = euroCost + " &times " + EURO + " + " + packCost + " + " + postage + " = " + rmbCost;
+                document.getElementById('kilo').innerHTML = weight;
+                document.getElementById('gw').innerHTML = GW;
+                document.getElementById('euro').innerHTML = euroCost;
+                document.getElementById('total').innerHTML = rmbCost;
+            }
+        </script>
+        <br>
+        <div>公式: <label id="calc"/></div>
+        <br>
+        <div>PRE: <input type="text" id="pre" value="0" onBlur="doMath();" /></div>
+        <div>1  : <input type="text" id="apt1" value="0" onBlur="doMath();" /></div>
+        <div>2  : <input type="text" id="apt2" value="0" onBlur="doMath();" /></div>
+        <div>3  : <input type="text" id="apt3" value="0" onchange="doMath();" /></div>
+        <div>1+ : <input type="text" id="apt1plus" value="0" onchange="doMath();" /></div>
+        <div>2+ : <input type="text" id="apt2plus" value="0" onBlur="doMath();" /></div>
+        <div>包裹单: <input type="text" id="postage" value="0" onBlur="doMath();" /></div>
+        <br>
+        
+        <span>包裹重量: <label id="gw" /></span>
+        <span>净重: <label id="kilo" /></span>
+        <div>价值（欧）: <label id="euro" /></div>
+        <div>总价: <label id="total" /></div>
+    </body>
+</html>
