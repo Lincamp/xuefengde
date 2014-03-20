@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="thousestyle.css">
+        <script>
+            function showPage(serverPage, objID)
+            {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function()
+                {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    {
+                        document.getElementById(objID).innerHTML = xmlhttp.responseText;
+                    }
+                }
+
+                xmlhttp.open("GET", serverPage, true);
+                xmlhttp.send(null);
+            }
+            function validateForm()
+            {
+                var x = document.forms["input"]["item"].value;
+                if (x == null || x == "")
+                {
+                    alert("Name of the item must be filled out");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="menu">
+            <li><a href="thouse.php" onclick="showPage('thouse.php', 'content');
+                    return false;">show all</a>
+                <ul>
+                    <li><a href="#">Clothes</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Electronic Device</a></li>
+                </ul>
+            </li>
+
+            <li><a href="tform.php" onclick="showPage('tform.php', 'content');
+                    return false;">search</a></li>
+            <li><a href="insert.php" onclick="showPage('insert.php', 'content');
+                    return false;">insert</a></li>
+            <li><a href="tupdate.php" onclick="showPage('tupdate.php', 'content');
+                    return false;">update</a></li>
+        </ul><br><br>
+
+        <h1>This page is dedicated to managing my belongings.</h1>
+        <div id="content">
+            <form name="input" action="tform.php" method="post" onsubmit="return validateForm()">
+                Where have I put my: <input type="text" name="item">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>

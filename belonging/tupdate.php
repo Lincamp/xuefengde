@@ -24,7 +24,7 @@ if(!session_is_registered(myusername))
 <body>
 
 <?php 
-require '../inc/menu.php';
+//require 'menu.php';
 require '../inc/database.php';
 $con = connect_db();
 $username = $_SESSION['login_user'];

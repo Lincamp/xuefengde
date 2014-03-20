@@ -15,7 +15,7 @@ if(!session_is_registered(myusername))
 
 <?php include_once("../inc/analyticstracking.php") ?>    
 <?php 
-require '../inc/menu.php';
+//require 'menu.php';
 require '../inc/database.php';
 
 $username = $_SESSION['login_user'];
