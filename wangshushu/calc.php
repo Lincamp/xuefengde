@@ -1,6 +1,11 @@
 <?php
 session_start();
-echo "============1".$username;
+$username = $_SESSION['login_user'];
+//echo "============1" . $username;
+//if (!session_is_registered(myusername)) {
+//    echo "============3" . $username;
+//}
+//echo "============4" . $username;
 ?>
 <!DOCTYPE html>
 <!--
@@ -185,6 +190,7 @@ and open the template in the editor.
                 {
                     sixhPostage = postage / GW * 0.6;
                     eighthPostage = postage / GW * 0.8;
+
                 }
                 else
                 {
@@ -192,6 +198,8 @@ and open the template in the editor.
                     eighthPostage = 0;
                 }
                 
+                  sixhPostage = parseFloat(parseFloat(Math.round(sixhPostage * 100) / 100).toFixed(2));
+                  eighthPostage = parseFloat(parseFloat(Math.round(eighthPostage * 100) / 100).toFixed(2));
                 sixhCost = sixhPostage + oneplusPrice * EURO;
                 eighthCost = eighthPostage + onePrice * EURO;
 
@@ -267,7 +275,7 @@ and open the template in the editor.
     <body>
         <?php
 //        if ($username === "Lincamp" || $username === "whbxld") {
-            echo "============".$username;
+//        echo "============" . $username;
 //        }
         ?>
         <br>
@@ -293,7 +301,6 @@ and open the template in the editor.
                 echo "<label>800克成本:</label> <span id=\"eighthCost\" class=\"result\"></span><br>";
             }
             ?>
-
         </div>
 
         <br><br><br><br><br><br><br><br>
