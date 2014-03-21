@@ -172,6 +172,22 @@ and open the template in the editor.
                 {
                     postage = parseInt(postval);
                 }
+                
+                var sixhCost;
+                var eighthCost;
+                
+                if(GW > 0)
+                {
+                    sixhCost = postage / GW * 0.6;
+                    eighthCost = postage / GW * 0.8;
+                    sixhCost = parseFloat(parseFloat(Math.round(sixhCost * 100) / 100).toFixed(2));
+                    eighthCost = parseFloat(parseFloat(Math.round(eighthCost * 100) / 100).toFixed(2));
+                }
+                else
+                {
+                    sixhCost = 0;
+                    eighthCost = 0;
+                }
 
                 // Schutzfolie cost
                 var packCost = aptprenum + apt1num + apt2num + apt3num;
@@ -213,6 +229,8 @@ and open the template in the editor.
                     document.getElementById('gw').innerHTML = GW + " 公斤 （净重" + weight + " 公斤）";
                     document.getElementById('euro').innerHTML = euroCost + " 欧";
                     document.getElementById('total').innerHTML = rmbCost + " 元";
+                    document.getElementById('sixhundred').innerHTML = sixhCost + " 元";
+                    document.getElementById('eighthundred').innerHTML = eighthCost + " 元";
                 }
                 else
                 {
@@ -225,6 +243,8 @@ and open the template in the editor.
                     document.getElementById('gw').innerHTML = 0;
                     document.getElementById('euro').innerHTML = 0;
                     document.getElementById('total').innerHTML = 0;
+                    document.getElementById('sixhundred').innerHTML = 0;
+                    document.getElementById('eighthundred').innerHTML = 0;
                 }
             }
         </script>
@@ -243,6 +263,8 @@ and open the template in the editor.
         <div><label>包裹重量:</label> <span id="gw" class="result"></span><br>
             <label>价值:</label> <span id="euro" class="result"></span><br>
             <label>总价:</label> <span id="total" class="result"></span><br>
+            <label>600克运费:</label> <span id="sixhundred" class="result"></span><br>
+            <label>800克运费:</label> <span id="eighthundred" class="result"></span><br>
         </div>
 
         <br><br><br><br><br><br><br><br>
