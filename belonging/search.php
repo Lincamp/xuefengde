@@ -14,7 +14,7 @@ if (!session_is_registered(myusername)) {
         <script>
             function searchRecord()
             {
-                document.write("#####");
+                //document.write("#####");
                 var x = document.forms["input"]["item"].value;
                 if (x == null || x == "")
                 {
