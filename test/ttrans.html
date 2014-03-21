@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../inc/i18next-1.7.2.js"></script>
+        <script>
+            i18n.init(function(t) {
+                // translate nav
+                $(".nav").i18n();
+
+                // programatical access
+                var appName = t("app.name");
+                document.write(appName);
+            });
+        </script>
+    </head>
+    <body>
+        <ul class="nav">
+            <li><a href="#" data-i18n="nav.home"></a></li>
+            <li><a href="#" data-i18n="nav.page1"></a></li>
+            <li><a href="#" data-i18n="nav.page2"></a></li>
+        </ul>
+
+    </body>
+</html>

@@ -29,7 +29,7 @@ session_register("myusername");
 session_register("mypassword");
 $_SESSION['login_user']=$myusername;
 
-header("location:../belonging/tform.php");
+header("location:../belonging/main.html");
 //header("location:welcome.php");
 echo "count: $count <br>";
 }
