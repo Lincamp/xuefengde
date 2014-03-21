@@ -14,6 +14,7 @@ if (!session_is_registered(myusername)) {
         <script>
             function searchRecord()
             {
+                document.write("#####");
                 var x = document.forms["input"]["item"].value;
                 if (x == null || x == "")
                 {
@@ -22,7 +23,7 @@ if (!session_is_registered(myusername)) {
                 }
 
                 var item = document.getElementById('item').value;
-document.write(item);
+
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -37,13 +38,14 @@ document.write(item);
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                     {
                         document.getElementById("resultList").innerHTML = xmlhttp.responseText;
+
                         document.getElementById("input").reset();
                     }
                 }
                 var queryStr = "?item=" + item;
 
                 //document.write(queryStr + "|" + resultStr);
-                xmlhttp.open("GET", "insertsql.php" + queryStr, true);
+                xmlhttp.open("GET", "searchsql.php" + queryStr, true);
                 xmlhttp.send();
             }
         </script>
@@ -52,23 +54,20 @@ document.write(item);
     <body>
 
         <!--a href="thouse.php" target="_self">show all</a>
-        <a href="tform.php" target="_self">search</a>
+        <a href="search.php" target="_self">search</a>
         <a href="tinsert.php" target="_self">insert</a-->
         <?php include_once("../inc/analyticstracking.php") ?>
         <?php
-//require 'menu.php'; 
-//require '../inc/database.php';
+require 'menu.php'; 
+require '../inc/database.php';
 //$con = connect_db();
-//$username = $_SESSION['login_user'];
         ?>
 
-
-        <form name="input">
-            Where have I put my: <input type="text" name="item">
+       <form name="input">
+            Where have I put my: <input type="text" name="item" id="item">
             <input type='button' onclick='searchRecord()' 
                    value='Submit'>
         </form>
-        <div id="resultList"></div>
+        <div id="resultList">Result table</div>
     </body>
-
 </html>

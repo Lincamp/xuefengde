@@ -11,7 +11,7 @@
         </ul>
     </li>
 
-    <li><a href="tform.php" target="_self">search</a></li>
+    <li><a href="search.php" target="_self">search</a></li>
     <li><a href="insert.php" target="_self">insert</a></li>
     <li><a href="tupdate.php" target="_self">update</a></li>
 </ul><br><br>

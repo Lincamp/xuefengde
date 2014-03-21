@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!session_is_registered(myusername)) {
+header("location:../login/login.php");
+}
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -5,11 +11,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
+    <head>        
+        <title>好记性不如烂笔头</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="thousestyle.css">
+
         <script>
             function showPage(serverPage, objID)
             {
@@ -27,6 +34,7 @@ and open the template in the editor.
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                     {
                         document.getElementById(objID).innerHTML = xmlhttp.responseText;
+                        //document.write(xmlhttp.responseText);
                     }
                 }
 
@@ -44,7 +52,7 @@ and open the template in the editor.
             }
         </script>
     </head>
-    <body>
+    <body onload="showPage('insert.php', 'content')">
         <ul id="menu">
             <li><a href="thouse.php" onclick="showPage('thouse.php', 'content');
                     return false;">show all</a>
@@ -55,7 +63,7 @@ and open the template in the editor.
                 </ul>
             </li>
 
-            <li><a href="tform.php" onclick="showPage('tform.php', 'content');
+            <li><a href="search.php" onclick="showPage('search.php', 'content');
                     return false;">search</a></li>
             <li><a href="insert.php" onclick="showPage('insert.php', 'content');
                     return false;">insert</a></li>
@@ -64,11 +72,6 @@ and open the template in the editor.
         </ul><br><br>
 
         <h1>This page is dedicated to managing my belongings.</h1>
-        <div id="content">
-            <form name="input" action="tform.php" method="post" onsubmit="return validateForm()">
-                Where have I put my: <input type="text" name="item">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+        <div id="content"></div>
     </body>
 </html>

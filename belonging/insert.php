@@ -75,7 +75,7 @@ and open the template in the editor.
         <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
-//        require 'menu.php';
+        require 'menu.php';
         require '../inc/database.php';
         ?>
         <form name="input" id="input">

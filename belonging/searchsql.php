@@ -21,7 +21,7 @@ else
 }
 */
 $item1 = $_GET["item"];
-echo "1#####################";
+
 //echo "SELECT * FROM belonging WHERE name LIKE '%$item1%' ORDER BY change_date DESC";
 if($item1 != "")
 {
