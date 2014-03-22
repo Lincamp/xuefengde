@@ -186,10 +186,10 @@ and open the template in the editor.
                 var sixhCost;
                 var eighthCost;
 
-                if (GW > 0)
+                if (weight > 0)
                 {
-                    sixhPostage = postage / GW * 0.6;
-                    eighthPostage = postage / GW * 0.8;
+                    sixhPostage = postage / weight * 0.6;
+                    eighthPostage = postage / weight * 0.8;
 
                 }
                 else
