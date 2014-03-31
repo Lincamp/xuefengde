@@ -19,7 +19,8 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../css/inputCss.css">
         <title>cost calculator</title>
         <script>
-            var EURO = 8.6;
+            var EURO = 8.5;
+            var bubbleWrap = 2;
             function doMath(autoPost) {
 
                 var prePrice = 14.95;
@@ -198,8 +199,8 @@ and open the template in the editor.
                     eighthPostage = 0;
                 }
                 
-                  sixhPostage = parseFloat(parseFloat(Math.round(sixhPostage * 100) / 100).toFixed(2));
-                  eighthPostage = parseFloat(parseFloat(Math.round(eighthPostage * 100) / 100).toFixed(2));
+                sixhPostage = parseFloat(parseFloat(Math.round(sixhPostage * 100) / 100).toFixed(2));
+                eighthPostage = parseFloat(parseFloat(Math.round(eighthPostage * 100) / 100).toFixed(2));
                 sixhCost = sixhPostage + oneplusPrice * EURO;
                 eighthCost = eighthPostage + onePrice * EURO;
 
@@ -209,7 +210,7 @@ and open the template in the editor.
                 eighthCost = parseFloat(parseFloat(Math.round(eighthCost * 100) / 100).toFixed(2));
 
                 // Schutzfolie cost
-                var packCost = aptprenum + apt1num + apt2num + apt3num;
+                var packCost = (aptprenum + apt1num + apt2num + apt3num) * bubbleWrap;
                 var euroCost = aptprenum * prePrice +
                         apt1num * onePrice +
                         apt2num * twoPrice +
@@ -306,7 +307,7 @@ and open the template in the editor.
         <br><br><br><br><br><br><br><br>
         <div><label>*</label><span class="result"> 自动计算出的包裹单价格只是粗略价格</span><br>
             <label>*</label><span class="result"> 汇率按照<script>document.write(EURO.toString());</script>计算</span><br>
-            <label>*</label><span class="result"> P、1、2、3段每罐多2元保护费</span><br>
+            <label>*</label><span class="result"> P、1、2、3段每罐多<script>document.write(bubbleWrap.toString());</script>元保护费</span><br>
         </div>
     </body>
 </html>
