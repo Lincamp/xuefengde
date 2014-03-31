@@ -15,10 +15,10 @@ and open the template in the editor.
         setlocale(LC_ALL, "fr_FR.utf8");
 
         // 这一行设置路径，"locale"是语言包路径，一般用相对路径，如果这个文件在刚刚那个test目录里面这里就应该是"../locale"
-        bindtextdomain("fr", "../locale");
+        bindtextdomain("fr1", "../locale");
 
         // Choose domain 
-        textdomain("fr");
+        textdomain("fr1");
 
         // Print a test message 
         echo (gettext("Hello"));
