@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../inc/i18next-1.7.2.js"></script>
+        <script>
+            $(document).ready(function() {
+                language_complete = navigator.language.split("-");
+                language = (language_complete[0]);
+                console.log("Sprache (root): %s", language);
+
+                i18n.init({lng: language, debug: true}, function() {
+                    // save to use translation function as resources are fetched
+                    $(".menu").i18n();
+                    $("headline").i18n();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="page">
+            <div data-role="content">
+                <div id="headline1" data-i18n="headline"></div>
+                <table width="100%" border="0" id="menu1" class="menu">
+                    <tr id="surname">
+                        <td width="50%" data-i18n="menu.surname"></td>
+                        <td width="50%">&nbsp;</td>
+                    </tr>
+                    <tr id="firstName">
+                        <td width="50%" data-i18n="menu.firstName"></td>
+                        <td width="50%">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
