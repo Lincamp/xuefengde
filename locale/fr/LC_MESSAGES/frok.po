@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-
 #: test/gettext.php:25
 msgid "Hello"
 msgstr "Bonjourr"

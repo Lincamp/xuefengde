@@ -10,18 +10,15 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php        
-        // Set language to German 
-        //putenv("LC_ALL=fr_FR.utf8");
-
+        <?php
         // set the locale into the instance of gettext 
-        setlocale(LC_ALL, "fr.utf8");
+        setlocale(LC_ALL, "fr_FR.utf8");
 
-        // Specify location of translation tables 
-        bindtextdomain("fr", "../locale");
+        // 这一行设置路径，"locale"是语言包路径，一般用相对路径，如果这个文件在刚刚那个test目录里面这里就应该是"../locale"
+        bindtextdomain("fr1", "../locale");
 
         // Choose domain 
-        textdomain("fr");
+        textdomain("fr1");
 
         // Print a test message 
         echo (gettext("Hello"));
