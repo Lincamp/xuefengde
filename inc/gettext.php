@@ -1,6 +1,6 @@
 <?php
 // 0: en, 1:fr, 2:de 3:cn 4:es
-$lang = 4;
+$lang = 1;
 
 // set the locale into the instance of gettext 
 if ($lang == 1) {
