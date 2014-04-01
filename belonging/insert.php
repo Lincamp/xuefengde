@@ -75,8 +75,9 @@ and open the template in the editor.
         <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
-        require 'menu.php';
-        require '../inc/database.php';
+        require_once 'menu.php';
+        require_once '../inc/database.php';
+        require '../inc/gettext.php';
         ?>
         <form name="input" id="input">
             <table>
@@ -152,6 +153,7 @@ and open the template in the editor.
         </form>
 
         <div id='recAdded'></div>
-        <div id='ajaxDiv'>Your result will display here</div>        
+        <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
+        <?php echo (_("Hello")) . "<br>"; ?>
     </body>
 </html>

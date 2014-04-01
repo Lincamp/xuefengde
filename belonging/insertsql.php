@@ -65,6 +65,7 @@ if ($itemlist != "") {
             die('Error: ' . mysqli_error($con));
         } else {
             echo "Record added.";
+			echo (gettext("Hello"));
         }
     }
 

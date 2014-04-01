@@ -18,4 +18,4 @@ msgstr ""
 
 #: test/gettext.php:24
 msgid "Hello"
-msgstr "Grüss Gott"
+msgstr "Grüssssssssssss Gott"

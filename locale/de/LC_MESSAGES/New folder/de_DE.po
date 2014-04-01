@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: deut\n"
+"POT-Creation-Date: 2014-04-01 14:06+0100\n"
+"PO-Revision-Date: 2014-04-01 14:06+0100\n"
+"Last-Translator: Xuefeng Wang <xuefengmsn@gmail.com>\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: D:\\Documents\\NetBeansProjects\\xuefengde\\belonging\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: test\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: insert.php:155
+msgid "Your result will display here"
+msgstr "Ergebnis hier"
+
+#: insertsql.php:68
+msgid "Hello"
+msgstr "Grüss Gott"
