@@ -77,7 +77,7 @@ and open the template in the editor.
         require '../inc/analyticstracking.php';
         require_once 'menu.php';
         require_once '../inc/database.php';
-        require '../inc/gettext.php';
+        //require_once '../inc/gettext.php';
         ?>
         <form name="input" id="input">
             <table>
@@ -134,7 +134,7 @@ and open the template in the editor.
                             <option value="bed room">bed room</option>
                             <option value="storage room">storage room</option>
                             <option value="kitchen">kitchen</option>
-                            <option value="bath room">bath room</option>
+                            <option value="bath room"><?php echo (_("bath room")); ?></option>
                         </select><br>
                     </td>
                 </tr>

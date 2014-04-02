@@ -52,22 +52,18 @@ if (!session_is_registered(myusername)) {
     </head>
 
     <body>
-
-        <!--a href="thouse.php" target="_self">show all</a>
-        <a href="search.php" target="_self">search</a>
-        <a href="tinsert.php" target="_self">insert</a-->
-        <?php include_once("../inc/analyticstracking.php") ?>
+        <!--?php //include_once("../inc/analyticstracking.php") ?-->
         <?php
-require 'menu.php'; 
-require '../inc/database.php';
+        require 'menu.php';
+        require '../inc/database.php';
 //$con = connect_db();
         ?>
 
-       <form name="input">
+        <form name="input">
             Where have I put my: <input type="text" name="item" id="item">
             <input type='button' onclick='searchRecord()' 
                    value='Submit'>
         </form>
-        <div id="resultList">Result table</div>
+        <div id="resultList"><?php echo (_("Result table")); ?></div>
     </body>
 </html>

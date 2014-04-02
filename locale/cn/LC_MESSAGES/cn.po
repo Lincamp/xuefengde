@@ -3,19 +3,32 @@
 # This file is distributed under the same license as the PACKAGE package.
 # lincamp <EMAIL@ADDRESS>, 2014.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: cn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 00:07+0200\n"
-"PO-Revision-Date: 2014-04-01 00:08+0200\n"
-"Last-Translator: lincamp <EMAIL@ADDRESS>\n"
-"Language-Team: Chinese\n"
+"POT-Creation-Date: 2014-04-02 09:37+0100\n"
+"PO-Revision-Date: 2014-04-02 09:37+0100\n"
+"Last-Translator: Xuefeng Wang <xuefengmsn@gmail.com>\n"
+"Language-Team: Chinese <xuefengmsn@gmail.com>\n"
+"Language: zh\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: D:\\Documents\\NetBeansProjects\\xuefengde\\belonging\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: test/gettext.php:24
+#: insert.php:156
+msgid "Your result will display here"
+msgstr "结果"
+
+#: insert.php:157 insertsql.php:68 menu.php:30
 msgid "Hello"
 msgstr "你好"
+
+#: menu.php:30
+msgid "This page is dedicated to managing my belongings."
+msgstr "好记性不如烂笔头"

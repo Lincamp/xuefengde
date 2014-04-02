@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 17:09+0100\n"
-"PO-Revision-Date: 2014-04-01 17:27+0100\n"
+"POT-Creation-Date: 2014-04-02 15:52+0100\n"
+"PO-Revision-Date: 2014-04-02 15:52+0100\n"
 "Last-Translator: Xuefeng Wang <xuefengmsn@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -21,6 +21,10 @@ msgstr ""
 "X-Poedit-Basepath: D:\\Documents\\NetBeansProjects\\xuefengde\\belonging\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: insert.php:137
+msgid "bath room"
+msgstr ""
+
 #: insert.php:156
 msgid "Your result will display here"
 msgstr "le resultat"
@@ -29,6 +33,38 @@ msgstr "le resultat"
 msgid "Hello"
 msgstr "Hola"
 
-#: menu.php:30
+#: menu.php:19
+msgid "show"
+msgstr ""
+
+#: menu.php:21
+msgid "Clothes"
+msgstr ""
+
+#: menu.php:22
+msgid "Food"
+msgstr ""
+
+#: menu.php:23
+msgid "Electronic Device"
+msgstr ""
+
+#: menu.php:27
+msgid "search"
+msgstr ""
+
+#: menu.php:28
+msgid "insert"
+msgstr ""
+
+#: menu.php:29
+msgid "update"
+msgstr ""
+
+#: menu.php:32
 msgid "This page is dedicated to managing my belongings."
 msgstr "belonging........."
+
+#: search.php:67
+msgid "Result table"
+msgstr ""

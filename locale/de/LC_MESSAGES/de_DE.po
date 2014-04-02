@@ -1,21 +1,20 @@
-# French translations for PACKAGE package.
-# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# g706308 <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fr\n"
+"Project-Id-Version: de_DE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-02 15:32+0100\n"
-"PO-Revision-Date: 2014-04-02 15:32+0100\n"
+"POT-Creation-Date: 2014-04-02 15:50+0100\n"
+"PO-Revision-Date: 2014-04-02 15:50+0100\n"
 "Last-Translator: Xuefeng Wang <xuefengmsn@gmail.com>\n"
-"Language-Team: French <xuefengmsn@gmail.com>\n"
-"Language: fr\n"
+"Language-Team: German <xuefengmsn@gmail.com>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: D:\\Documents\\NetBeansProjects\\xuefengde\\belonging\n"
@@ -23,57 +22,48 @@ msgstr ""
 
 #: insert.php:137
 msgid "bath room"
-msgstr "salle de bain"
+msgstr "Badzimmer"
 
 #: insert.php:156
 msgid "Your result will display here"
-msgstr "le r"
+msgstr ""
 
 #: insert.php:157 insertsql.php:68
 msgid "Hello"
-msgstr "Bonjourr"
+msgstr "Grüss Gott"
 
 #: menu.php:19
 msgid "show"
-msgstr "montrer"
+msgstr "zeigen"
 
 #: menu.php:21
 msgid "Clothes"
-msgstr "vêtements"
+msgstr "Kleide"
 
 #: menu.php:22
 msgid "Food"
-msgstr "Nourriture"
+msgstr "Essen"
 
 #: menu.php:23
 msgid "Electronic Device"
-msgstr "appareil électronique"
+msgstr ""
 
 #: menu.php:27
 msgid "search"
-msgstr "rechercher"
+msgstr "suchen"
 
 #: menu.php:28
 msgid "insert"
-msgstr "insérer"
+msgstr "einfügen"
 
 #: menu.php:29
 msgid "update"
-msgstr "mise à jour"
+msgstr ""
 
 #: menu.php:32
 msgid "This page is dedicated to managing my belongings."
-msgstr "Cette page pour économiser votre temps"
+msgstr ""
 
 #: search.php:67
 msgid "Result table"
-msgstr "Table de résultats"
-
-#~ msgid "English"
-#~ msgstr "Anglais"
-
-#~ msgid "Spanish"
-#~ msgstr "Espanol"
-
-#~ msgid "German"
-#~ msgstr "Allemand"
+msgstr ""
