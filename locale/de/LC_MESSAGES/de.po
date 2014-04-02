@@ -3,19 +3,125 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-31 23:56+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: German\n"
+"POT-Creation-Date: 2014-04-02 16:51+0100\n"
+"PO-Revision-Date: 2014-04-02 16:51+0100\n"
+"Last-Translator: Xuefeng Wang <xuefengmsn@gmail.com>\n"
+"Language-Team: German <xuefengmsn@gmail.com>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: D:\\Documents\\NetBeansProjects\\xuefengde\\belonging\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: test/gettext.php:24
+#: insert.php:108
+#, fuzzy
+msgid "clothes"
+msgstr "Kleide"
+
+#: insert.php:109
+msgid "food"
+msgstr "Essen"
+
+#: insert.php:110
+#, fuzzy
+msgid "electronic device"
+msgstr "elektronische Geräte"
+
+#: insert.php:111
+msgid "stationary"
+msgstr "Schreibwaren"
+
+#: insert.php:112
+msgid "others"
+msgstr "andere"
+
+#: insert.php:119
+msgid "in"
+msgstr "in"
+
+#: insert.php:120
+msgid "on"
+msgstr "auf"
+
+#: insert.php:121
+msgid "under"
+msgstr "unter"
+
+#: insert.php:122
+msgid "in front of"
+msgstr "vor"
+
+#: insert.php:123
+msgid "behind"
+msgstr "hinter"
+
+#: insert.php:133
+msgid "living room"
+msgstr "Wohnzimmer"
+
+#: insert.php:134
+msgid "bed room"
+msgstr "Schlafzimmer"
+
+#: insert.php:135
+msgid "storage room"
+msgstr "Abstellraum"
+
+#: insert.php:136
+msgid "kitchen"
+msgstr "Küche"
+
+#: insert.php:137
+msgid "bath room"
+msgstr "Badzimmer"
+
+#: insert.php:156
+msgid "Your result will display here"
+msgstr "Ergebnis"
+
+#: insert.php:157 insertsql.php:68
 msgid "Hello"
 msgstr "Grüss Gott"
+
+#: menu.php:19
+msgid "show"
+msgstr "zeigen"
+
+#: menu.php:21
+msgid "Clothes"
+msgstr "Kleide"
+
+#: menu.php:22
+msgid "Food"
+msgstr "Essen"
+
+#: menu.php:23
+msgid "Electronic Device"
+msgstr "elektronische Geräte"
+
+#: menu.php:27
+msgid "search"
+msgstr "suchen"
+
+#: menu.php:28
+msgid "insert"
+msgstr "einfügen"
+
+#: menu.php:29
+msgid "update"
+msgstr "aktualisieren"
+
+#: menu.php:32
+msgid "This page is dedicated to managing my belongings."
+msgstr "Sparen Sie Ihre Zeit"
+
+#: search.php:67
+msgid "Result table"
+msgstr "Ergebnis"

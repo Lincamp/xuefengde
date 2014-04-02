@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-02 15:32+0100\n"
-"PO-Revision-Date: 2014-04-02 15:32+0100\n"
+"POT-Creation-Date: 2014-04-02 17:08+0100\n"
+"PO-Revision-Date: 2014-04-02 17:08+0100\n"
 "Last-Translator: Xuefeng Wang <xuefengmsn@gmail.com>\n"
 "Language-Team: French <xuefengmsn@gmail.com>\n"
 "Language: fr\n"
@@ -21,15 +21,90 @@ msgstr ""
 "X-Poedit-Basepath: D:\\Documents\\NetBeansProjects\\xuefengde\\belonging\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: insert.php:137
+#: insert.php:101
+msgid "Item name"
+msgstr "nom"
+
+#: insert.php:105
+#, fuzzy
+msgid "Type"
+msgstr "genre"
+
+#: insert.php:108
+#, fuzzy
+msgid "clothes"
+msgstr "vêtements"
+
+#: insert.php:109
+msgid "food"
+msgstr "alimentation"
+
+#: insert.php:110
+#, fuzzy
+msgid "electronic device"
+msgstr "appareil électronique"
+
+#: insert.php:111
+msgid "stationary"
+msgstr "papeterie"
+
+#: insert.php:112
+msgid "others"
+msgstr "autres"
+
+#: insert.php:119
+msgid "in"
+msgstr "dans"
+
+#: insert.php:120
+msgid "on"
+msgstr "sur"
+
+#: insert.php:121
+msgid "under"
+msgstr "sous"
+
+#: insert.php:122
+msgid "in front of"
+msgstr "devant"
+
+#: insert.php:123
+msgid "behind"
+msgstr "derrière"
+
+#: insert.php:130
+msgid "Room"
+msgstr "Salle"
+
+#: insert.php:132
+msgid "living room"
+msgstr "salle de séjour"
+
+#: insert.php:133
+msgid "bed room"
+msgstr "chambre à coucher"
+
+#: insert.php:134
+msgid "storage room"
+msgstr "salle de stockage"
+
+#: insert.php:135
+msgid "kitchen"
+msgstr "cuisine"
+
+#: insert.php:136
 msgid "bath room"
 msgstr "salle de bain"
 
-#: insert.php:156
-msgid "Your result will display here"
-msgstr "le r"
+#: insert.php:142
+msgid "Comment"
+msgstr "commentaire"
 
-#: insert.php:157 insertsql.php:68
+#: insert.php:155
+msgid "Your result will display here"
+msgstr "résultat"
+
+#: insert.php:156 insertsql.php:68
 msgid "Hello"
 msgstr "Bonjourr"
 

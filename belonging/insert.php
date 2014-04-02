@@ -98,49 +98,48 @@ and open the template in the editor.
                         </select>
                     </td>
                     <td>
-                        Item name:*
+                        <?php echo (_("Item name")); ?>:*
                         <input type="text" name="itemname" id="itemname">
                     </td>
                     <td>
-                        Type:
+                        <?php echo (_("Type")); ?>:
                         <select name="type" id="type">
                             <option value=""></option>    
-                            <option value="clothes">clothes</option>
-                            <option value="food">food</option>
-                            <option value="electronic device">electronic device</option>
-                            <option value="stationary">stationary</option>
-                            <option value="others">others</option>
+                            <option value="clothes"><?php echo (_("clothes")); ?></option>
+                            <option value="food"><?php echo (_("food")); ?></option>
+                            <option value="electronic device"><?php echo (_("electronic device")); ?></option>
+                            <option value="stationary"><?php echo (_("stationary")); ?></option>
+                            <option value="others"><?php echo (_("others")); ?></option>
                         </select><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <select name="position" id="position">
-                            <option value="in">in</option>
-                            <option value="on">on</option>
-                            <option value="under">under</option>
-                            <option value="in front of">in front of</option>
-                            <option value="behind">behind</option>
-                            <option value=""></option>
+                            <option value="in"><?php echo (_("in")); ?></option>
+                            <option value="on"><?php echo (_("on")); ?></option>
+                            <option value="under"><?php echo (_("under")); ?></option>
+                            <option value="in front of"><?php echo (_("in front of")); ?></option>
+                            <option value="behind"><?php echo (_("behind")); ?></option>
                         </select>
                     </td>
                     <td>
                         Container: <input type="text" name="container" id="container">
                     </td>
                     <td>
-                        Room:
+                        <?php echo (_("Room")); ?>:
                         <select name="room" id="room">
-                            <option value="living room">living room</option>
-                            <option value="bed room">bed room</option>
-                            <option value="storage room">storage room</option>
-                            <option value="kitchen">kitchen</option>
+                            <option value="living room"><?php echo (_("living room")); ?></option>
+                            <option value="bed room"><?php echo (_("bed room")); ?></option>
+                            <option value="storage room"><?php echo (_("storage room")); ?></option>
+                            <option value="kitchen"><?php echo (_("kitchen")); ?></option>
                             <option value="bath room"><?php echo (_("bath room")); ?></option>
                         </select><br>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3" align="center">
-                        Comment: <input type="text" name="comment" id="comment"><br>
+                        <?php echo (_("Comment")); ?>: <input type="text" name="comment" id="comment"><br>
                     </td>
                 </tr>
                 <tr>
