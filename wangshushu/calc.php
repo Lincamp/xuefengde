@@ -19,7 +19,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../css/inputCss.css">
         <title>cost calculator</title>
         <script>
-            var EURO = 8.5;
+            var EURO = 8.7;
             var bubbleWrap = 2;
             function doMath(autoPost) {
 
@@ -27,8 +27,8 @@ and open the template in the editor.
                 var onePrice = 13.95;
                 var twoPrice = 13.95;
                 var threePrice = 13.95;
-                var oneplusPrice = 9.45;
-                var twoplusPrice = 9.45;
+                var oneplusPrice = 9.25;
+                var twoplusPrice = 9.25;
 
                 var aptpreval = document.getElementById('aptpre').value;
                 var aptprenum;
