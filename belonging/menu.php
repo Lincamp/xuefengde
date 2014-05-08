@@ -11,7 +11,8 @@
 <a href="?locale=fr_FR">Français</a> |
 <a href="?locale=de_DE">Deutsch</a> |
 <a href="?locale=zh_CN">中文</a> |
-<a href="?locale=es_ES">Español</a>
+<a href="?locale=es_ES">Español</a> &nbsp;&nbsp;&nbsp;
+<a href="../login/logout.php">logout</a>
 <br>
 </div>
 
