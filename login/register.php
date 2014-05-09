@@ -1,71 +1,38 @@
-<!DOCTYPE html>
-
-
 <?php
-//require '../inc/database.php';
-////include("config.php");
-//$con = connect_db();
-//
-////session_start();
-//
-//if($_SERVER["REQUEST_METHOD"] == "POST")
-//{
-//// username and password sent from Form 
-//$myusername=addslashes($_POST['myusername']); 
-//$mypassword=addslashes($_POST['mypassword']); 
-//
-//////$result = mysqli_query($con, "SELECT * FROM belonging ORDER BY name, change_date DESC");
-//////$numOfRows = mysqli_num_rows($result);
-//
-//$sqlcmd="SELECT id FROM user WHERE username='$myusername' and password='$mypassword'";
-////$result=mysql_query($sql);
-//$result=mysqli_query($con, $sqlcmd);
-//
-////$row=mysqli_fetch_array($result);
-//////$active=$row['active'];
-//$count=mysqli_num_rows($result);
-//
-//// If result matched $myusername and $mypassword, table row must be 1 row
-//if($count==1)
-//{
-//session_register("myusername");
-//session_register("mypassword");
-//$_SESSION['login_user']=$myusername;
-//
-//header("location:../belonging/main.html");
-////header("location:welcome.php");
-//echo "count: $count <br>";
-//}
-//else 
-//{
-//$error="Your Login Name or Password is invalid";
-//echo $error;
-//}
-//}
+session_start();
+if (!session_is_registered(myusername)) {
+    header("location:../login/login.php");
+}
 ?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <link rel="stylesheet" type="text/css" href="thousestyle.css">
+        <link rel="stylesheet" type="text/css" href="../belonging/thousestyle.css">
         <title></title>
         <script>
             function insertRecord()
             {
-//                var x = document.forms["input"]["itemname"].value;
-//                if (x == null || x == "")
-//                {
-//                    alert("Name of the item(s) must be filled out");
-//                    return false;
-//                }
-                
-                var username = document.getElementById('myusername').value;
-                var password = document.getElementById('mypassword').value;
-                var email = document.getElementById('myemail').value;
-                
-//                var resultStr = itemname + " " +
+                var x = document.forms["input"]["username"].value;
+                if (x == null || x == "")
+                {
+                    alert("Name of the item(s) must be filled out");
+                    return false;
+                }
+
+                var username = document.getElementById('username').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+//                var resultStr = username + " " +
 //                                number + " " +
-//                                position + " " +
-//                                container + " " +
+//                                email + " " +
+//                                password + " " +
 //                                room + " " +
 //                                type + "</br> Record added."; 
 
@@ -87,9 +54,9 @@
                         document.getElementById("input").reset();
                     }
                 }
-                var queryStr = "?email=" + email +
-                        "&password=" + password +
-                        "&username=" + username;
+                var queryStr = "?username=" + username +
+                        "&email=" + email +
+                        "&password=" + password;
 
                 //document.write(queryStr + "|" + resultStr);
                 xmlhttp.open("GET", "registersql.php" + queryStr, true);
@@ -98,49 +65,44 @@
         </script>
     </head>
     <body>
-       <?php include_once("../inc/analyticstracking.php") ?>    
+        <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
         require_once '../belonging/menu.php';
         require_once '../inc/database.php';
         //require_once '../inc/gettext.php';
         ?>
-        
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
-<form name="input" id="input">
-<td>
-<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-<tr>
-<td colspan="3"><strong>Member Register</strong></td>
-</tr>
-<tr>
-<td width="78">Email</td>
-<td width="6">:</td>
-<td width="294"><input name="myemail" type="text" id="myusername"></td>
-</tr>
-<tr>
-<td width="78">Username</td>
-<td width="6">:</td>
-<td width="294"><input name="myusername" type="text" id="myusername"></td>
-</tr>
-<tr>
-<td>Password</td>
-<td>:</td>
-<td><input name="mypassword" type="password" id="mypassword"></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Sign Up"></td>
-</tr>
-</table>
-</td>
-</form>
-</tr>
-</table>
-        
+        <form name="input" id="input">
+            <table>
+                <tr>
+                    <td>
+                        <?php echo (_("Username")); ?>:*
+                        <input type="text" name="username" id="username">
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <?php echo (_("EMAIL")); ?>:*
+                        <input type="text" name="email" id="email">
+                    </td>
+                </tr>
+                <tr>                   
+                    <td>
+                        <?php echo (_("Password")); ?>:*
+                        <input type="text" name="password" id="password">
+                    </td>                   
+                </tr>                
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type='button' onclick='insertRecord()' 
+                               value='Submit'/><br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div id='recAdded'></div>
         <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
         <?php echo (_("Hello")) . "<br>"; ?>
     </body>
-</html>        
+</html>

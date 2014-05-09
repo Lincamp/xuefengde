@@ -1,8 +1,8 @@
 <?php
 session_start();
-//if (!session_is_registered(myusername)) {
-//    header("location:../login/login.php");
-//}
+if (!session_is_registered(myusername)) {
+    header("location:../login/login.php");
+}
 ?>
 <?php include_once("../inc/analyticstracking.php") ?>    
 
@@ -17,15 +17,16 @@ require '../inc/analyticstracking.php';
 //require '../inc/menu.php';
 require '../inc/database.php';
 
-$email = $_GET['myemail'];
-$username = $_GET['myusername'];
-$password = $_GET['mypassword'];
+$username = $_GET['username'];
+$password = $_GET['password'];
+$email = $_GET['email'];
 
-echo "################################<br>";
+//echo "################################<br>";
 
 
-if ($itemlist != "") {
+
     $con = connect_db();
+
     
     $sqlcmd = "INSERT INTO user (username, password, email)
     VALUES ('$username', '$password', '$email')";
@@ -35,10 +36,9 @@ if ($itemlist != "") {
     if (!mysqli_query($con, $sqlcmd)) {
         die('Error: ' . mysqli_error($con));
     } else {
-        echo (gettext("Record added."));
-        echo (gettext("Hello"));
+        echo (gettext("Registration successful."));
     }
 
     mysqli_close($con);
-}
+
 ?>
