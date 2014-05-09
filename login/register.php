@@ -72,37 +72,47 @@ and open the template in the editor.
         require_once '../inc/database.php';
         //require_once '../inc/gettext.php';
         ?>
-        <form name="input" id="input">
-            <table>
-                <tr>
-                    <td>
-                        <?php echo (_("Username")); ?>:*
-                        <input type="text" name="username" id="username">
-                    </td>                    
-                </tr>
-                <tr>
-                    <td>
-                        <?php echo (_("EMAIL")); ?>:*
-                        <input type="text" name="email" id="email">
-                    </td>
-                </tr>
-                <tr>                   
-                    <td>
-                        <?php echo (_("Password")); ?>:*
-                        <input type="text" name="password" id="password">
-                    </td>                   
-                </tr>                
-                <tr>
-                    <td colspan="3" align="center">
-                        <input type='button' onclick='insertRecord()' 
-                               value='Submit'/><br>
-                    </td>
-                </tr>
-            </table>
-        </form>
 
-        <div id='recAdded'></div>
-        <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
-        <?php echo (_("Hello")) . "<br>"; ?>
-    </body>
+        <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+            <tr>        
+            <form name="input" id="input">
+                <td>
+                    <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+                        <tr>
+                            <td colspan="3"><strong>Member Register</strong></td>
+                        </tr>
+                        <tr>
+                            <td width="78">
+                                <?php echo (_("Username")); ?></td>
+                            <td width="6">:*</td>
+                            <td width="294"><input type="text" name="username" id="username"></td>
+                            </td>                    
+                        </tr>
+                        <tr>
+                            <td width="78">
+                                <?php echo (_("EMAIL")); ?></td><td width="6">:*</td>
+                            <td width="294"><input type="text" name="email" id="email"></td>
+                            </td>
+                        </tr>
+                        <tr>                   
+                            <td width="78">
+                                <?php echo (_("Password")); ?></td><td width="6">:*</td>
+                            <td width="294"><input type="password" name="password" id="password"></td>
+                            </td>                   
+                        </tr>                
+                        <tr>
+                            <td colspan="3" align="center">
+                                <input type='button' onclick='insertRecord()' 
+                                       value='Sign Up'/><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </form>
+        </tr>
+    </table>
+    <div id='recAdded'></div>
+    <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
+    <?php echo (_("Hello")) . "<br>"; ?>
+</body>
 </html>
