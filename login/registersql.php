@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!session_is_registered(myusername)) {
-    header("location:../login/login.php");
-}
+//if (!session_is_registered(myusername)) {
+//    header("location:../login/login.php");
+//}
 ?>
 <?php include_once("../inc/analyticstracking.php") ?>    
 
