@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!session_is_registered(myusername)) {
-    header("location:../login/login.php");
-}
+//if (!session_is_registered(myusername)) {
+//    header("location:../login/login.php");
+//}
 ?>
 <!DOCTYPE html>
 <!--
@@ -13,12 +13,47 @@ and open the template in the editor.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../belonging/thousestyle.css">
         <title></title>
         <script>
+// When the browser is ready...
+  $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#register-form").validate({
+    
+        // Specify the validation rules
+        rules: {
+            username: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            username: "Please enter your user name",            
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+            email: "Please enter a valid email address",
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });            
             function insertRecord()
             {
-                var x = document.forms["input"]["username"].value;
+                var x = document.forms["register-form"]["username"].value;
                 if (x == null || x == "")
                 {
                     alert("Name of the item(s) must be filled out");
@@ -51,7 +86,7 @@ and open the template in the editor.
                     {
                         //document.getElementById("recAdded").innerHTML = resultStr;
                         document.getElementById("ajaxDiv").innerHTML = xmlhttp.responseText;
-                        document.getElementById("input").reset();
+                        document.getElementById("register-form").reset();
                     }
                 }
                 var queryStr = "?username=" + username +
@@ -75,7 +110,7 @@ and open the template in the editor.
 
         <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
             <tr>        
-            <form name="input" id="input">
+            <form name="input" id="register-form" novalidate="novalidate">
                 <td>
                     <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
                         <tr>
