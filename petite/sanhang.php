@@ -30,7 +30,7 @@ and open the template in the editor.
         echo "<div class=\"threeLine\">";        
         echo "Je t'aimais<br>";        
         echo "Je t'aime<br>";
-        echo "Et je t'aimerais<br>";
+        echo "Et je t'aimerai<br>";
         echo "</div>";
         
         echo "<br>";
