@@ -11,7 +11,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/sanhangCss.css">
+        <link rel="stylesheet" type="text/css" href="../css/sanhangCss.css">
         <title>three lines</title>        
     </head>
     <body>
@@ -32,6 +32,15 @@ and open the template in the editor.
         echo "Je t'aime<br>";
         echo "Et je t'aimerais<br>";
         echo "</div>";
+        
+        echo "<br>";
+        echo "<br>";
+        
+        echo "<div class=\"threeLine\">";        
+        echo "Lufthansa, Thalys, 老头<br>";        
+        echo "都是好东西<br>";
+        echo "也不是好东西<br>";
+        echo "</div>";        
         }
         ?>
         </div>
