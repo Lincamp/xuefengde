@@ -1,0 +1,44 @@
+/* 
+    Document   : inputCss
+    Created on : Jan 10, 2014, 11:43:25 AM
+    Author     : wxue
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body 
+{
+    background-image:url('cittext.gif');
+
+    background-repeat:repeat;
+
+    background-position:left top;     
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 20%;
+    text-align: right;
+    margin-right: 0.5em;
+    font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
+}
+
+.threeLine
+{
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
+}
+
+#content {
+    //width: 700px ;
+    margin-left: auto ;
+    margin-right: auto ;
+}
