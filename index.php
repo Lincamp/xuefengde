@@ -11,7 +11,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            echo "TODO";
+            require 'menu.php';
+            echo (_("I am a lazy programmer.<br>"));
+            echo (_("Here is a"));
         ?>
+                
+        <a href="/belonging/insert.php"><?php echo (_("web page")); ?></a>
+        <?php echo (_("I wrote to note down anything your want, to help your organize your things, thus to save your energy and time.")); ?> 
     </body>
 </html>

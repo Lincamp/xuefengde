@@ -1,6 +1,13 @@
 <?php
 session_start();
 $username = $_SESSION['login_user'];
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
+//echo $_SESSION['url'];
+
+if (!session_is_registered(myusername)) {
+    header("location:../login/login.php");
+}
 //echo "============1" . $username;
 //if (!session_is_registered(myusername)) {
 //    echo "============3" . $username;
@@ -19,7 +26,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../css/inputCss.css">
         <title>cost calculator</title>
         <script>
-            var EURO = 8.7;
+            var EURO = 8.5;
             var bubbleWrap = 2;
             function doMath(autoPost) {
 

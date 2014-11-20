@@ -29,7 +29,15 @@ session_register("myusername");
 session_register("mypassword");
 $_SESSION['login_user']=$myusername;
 
-header("location:../belonging/main.html");
+if(isset($_SESSION['url'])) 
+   $url = $_SESSION['url']; // holds url for last page visited.
+else 
+   $url = "/index.php"; // default page for
+
+//header("location:../belonging/main.html");
+
+// go to previous page
+header("location:$url");
 //header("location:welcome.php");
 echo "count: $count <br>";
 }
