@@ -96,6 +96,7 @@ and open the template in the editor.
                 //document.write(queryStr + "|" + resultStr);
                 xmlhttp.open("GET", "registersql.php" + queryStr, true);
                 xmlhttp.send();
+                window.history.back()
             }
         </script>
     </head>
@@ -103,7 +104,7 @@ and open the template in the editor.
         <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
-        require_once '../belonging/menu.php';
+        require_once '../menu.php';
         require_once '../inc/database.php';
         //require_once '../inc/gettext.php';
         ?>
@@ -125,7 +126,7 @@ and open the template in the editor.
                         </tr>
                         <tr>
                             <td width="78">
-                                <?php echo (_("EMAIL")); ?></td><td width="6">:*</td>
+                                <?php echo (_("Email")); ?></td><td width="6">:*</td>
                             <td width="294"><input type="text" name="email" id="email"></td>
                             </td>
                         </tr>

@@ -11,12 +11,35 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            require 'menu.php';
-            echo (_("I am a lazy programmer.<br>"));
-            echo (_("Here is a"));
+        require 'menu.php';
+
+//        session_start();
+//        $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+        
+        echo (_("I am a lazy programmer."));
+        echo "<br>";
+        echo (_("Here is a"));
         ?>
-                
+
         <a href="/belonging/insert.php"><?php echo (_("web page")); ?></a>
+
         <?php echo (_("I wrote to note down anything your want, to help your organize your things, thus to save your energy and time.")); ?> 
+        <!-- Start of StatCounter Code for Default Guide -->
+        <script type="text/javascript">
+            var sc_project = 9104726;
+            var sc_invisible = 1;
+            var sc_security = "4090b474";
+            var scJsHost = (("https:" == document.location.protocol) ?
+                    "https://secure." : "http://www.");
+            document.write("<sc" + "ript type='text/javascript' src='" +
+                    scJsHost +
+                    "statcounter.com/counter/counter.js'></" + "script>");
+        </script>
+        <noscript><div class="statcounter"><a title="free hit
+                                              counters" href="http://statcounter.com/free-hit-counter/"
+                                              target="_blank"><img class="statcounter"
+                                 src="http://c.statcounter.com/9104726/0/4090b474/1/"
+                                 alt="free hit counters"></a></div></noscript>
+        <!-- End of StatCounter Code for Default Guide -->
     </body>
 </html>
