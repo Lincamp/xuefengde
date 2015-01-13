@@ -26,8 +26,11 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../css/inputCss.css">
         <title>cost calculator</title>
         <script>
-            var EURO = 8.5;
+            var euroDef = 8; // Default exchange rate EURO/RMB
             var bubbleWrap = 2;
+            var packWeight = 1.2; // weight of the package
+            // if autoPost == 1 the postage changes if the input changes
+            // if autoPost == 0 the postage stays the same if the input changes
             function doMath(autoPost) {
 
                 var prePrice = 14.95;
@@ -36,6 +39,17 @@ and open the template in the editor.
                 var threePrice = 13.95;
                 var oneplusPrice = 9.25;
                 var twoplusPrice = 9.25;
+
+                var euroval = document.getElementById('eurocurr').value;
+                var EURO;
+                if (euroval == null || euroval == "")
+                {
+                    EURO = euroDef;
+                }
+                else
+                {
+                    EURO = parseFloat(euroval);
+                }
 
                 var aptpreval = document.getElementById('aptpre').value;
                 var aptprenum;
@@ -117,7 +131,7 @@ and open the template in the editor.
                 {
                     tmpGW = weight;
                     //GW = weight + 1.3;
-                    GW = Math.ceil(parseFloat(weight) + 1.3);
+                    GW = Math.ceil(parseFloat(weight) + packWeight);
                 }
 
                 // Other cost
@@ -140,55 +154,65 @@ and open the template in the editor.
                 {
                     switch (GW)
                     {
+                        case 1:
+                            postage = 19 * EURO;
+                            break;
+                        case 2:
+                            postage = 21 * EURO;
+                            break;                        
                         case 3:
-                            postage = 195.5;
+                            postage = 23 * EURO;
                             break;
                         case 4:
-                            postage = 212.5;
+                            postage = 25 * EURO;
                             break;
                         case 5:
-                            postage = 211.8;
+                            postage = 26 * EURO;
                             break;
                         case 6:
-                            postage = 228.8;
+                            postage = 28 * EURO;
                             break;
                         case 7:
-                            postage = 246;
+                            postage = 30 * EURO;
                             break;
                         case 8:
-                            postage = 263;
+                            postage = 32 * EURO;
                             break;
                         case 9:
-                            postage = 288;
+                            postage = 35 * EURO;
                             break;
                         case 10:
-                            postage = 305;
+                            postage = 37 * EURO;
                             break;
                         case 11:
-                            postage = 348;
+                            postage = 40 * EURO;
                             break;
                         case 12:
-                            postage = 357;
+                            postage = 42 * EURO;
                             break;
                         case 13:
-                            postage = 365;
+                            postage = 44 * EURO;
                             break;
                         case 14:
-                            postage = 391;
+                            postage = 46 * EURO;
                             break;
                         case 15:
-                            postage = 408;
+                            postage = 48 * EURO;
                             break;
                         default:
                             postage = 0;
                     }
+                    
                     //document.write("!!!!!" + postage);
                 }
                 else
                 {
-                    postage = parseInt(postval);
+                    postage = parseFloat(postval);
                 }
 
+                postage = parseFloat(parseFloat(Math.round(postage * 100) / 100).toFixed(1))
+                // sixh 600g
+                // eighth 800g
                 var sixhPostage;
                 var eighthPostage;
                 var sixhCost;
@@ -235,6 +259,7 @@ and open the template in the editor.
                 var rmbCost = euroCost * EURO + packCost + postage;
                 rmbCost = rmbCost.toFixed(0);
                 if (!(isNaN(postage) ||
+                        isNaN(EURO) ||
                         isNaN(euroCost) ||
                         isNaN(packCost) ||
                         isNaN(rmbCost) ||
@@ -289,7 +314,9 @@ and open the template in the editor.
         <br>
         <div><label for="calc">计算:</label><span id="calc" class="result"></span></div>
         <br><br>
-        <div><label for="aptpre">PRE: </label> <input type="text" id="aptpre" value="0" onBlur="doMath(1);" /><br>
+        <div>
+            <label for="eurocurr">汇率: </label> <input type="text" id="eurocurr" value="8" onchange="doMath(1);" /><br>
+            <label for="aptpre">PRE: </label> <input type="text" id="aptpre" value="0" onBlur="doMath(1);" /><br>
             <label for="apt1">1: </label> <input type="text" id="apt1" value="0" onBlur="doMath(1);" /><br>
             <label for="apt2">2: </label> <input type="text" id="apt2" value="0" onBlur="doMath(1);" /><br>
             <label for="apt3">3: </label> <input type="text" id="apt3" value="0" onchange="doMath(1);" /><br>
