@@ -2,12 +2,8 @@
 session_start();
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 //if (!session_is_registered(myusername)) {
-//    header("location:../login/login.php");
+//    header("location:../login1/demo_1.php");
 //}
-
-if (!isset($_SESSION['myusername'])) {
-    header("location:../login/login.php");
-}
 ?>
 <!DOCTYPE html>
 <!--
@@ -80,7 +76,11 @@ and open the template in the editor.
         <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
-        require_once 'menu.php';
+        //require_once 'menu.php';
+
+        $dir = dirname(__FILE__);
+        require_once ('../login1/demo_1.php');
+
         require_once '../inc/database.php';
         //require_once '../inc/gettext.php';
         ?>
