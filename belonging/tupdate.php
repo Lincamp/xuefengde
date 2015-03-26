@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(!session_is_registered(myusername))
-{
+if (!isset($_SESSION['myusername'])) {
     header("location:../login/login.php");
 }
 ?>

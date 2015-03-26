@@ -5,7 +5,10 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 //echo $_SESSION['url'];
 
-if (!session_is_registered(myusername)) {
+//if (!session_is_registered(myusername)) {
+//    header("location:../login/login.php");
+//}
+if (!isset($_SESSION['myusername'])) {
     header("location:../login/login.php");
 }
 //echo "============1" . $username;
