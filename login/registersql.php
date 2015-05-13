@@ -27,9 +27,8 @@ $email = $_GET['email'];
 
     $con = connect_db();
 
-    
     $sqlcmd = "INSERT INTO user (username, password, email)
-    VALUES ('$username', '$password', '$email')";
+    VALUES ('$username', '" . md5($password) . "', '$email')";
     //$result = mysqli_query($con,"SELECT * FROM belonging");
     //echo "$sqlcmd<br>";
 

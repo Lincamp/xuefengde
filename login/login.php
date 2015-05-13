@@ -31,7 +31,7 @@ session_start();
 ////$result = mysqli_query($con, "SELECT * FROM belonging ORDER BY name, change_date DESC");
 ////$numOfRows = mysqli_num_rows($result);
 
-        $sqlcmd = "SELECT id FROM user WHERE username='$myusername' and password='$mypassword'";
+        $sqlcmd = "SELECT id FROM user WHERE username='$myusername' and password='" . md5($mypassword) . "'";
 //$result=mysql_query($sql);
         $result = mysqli_query($con, $sqlcmd);
 
