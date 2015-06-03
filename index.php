@@ -15,22 +15,74 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-        <?php
-        require 'menu.php';
+            <?php
+            require 'menu.php';
 
 //        session_start();
 //        $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+//            echo "<h4>";
+//            echo (_("I wrote a simple webpage to note down anything your want, to help your organize your things, thus to save your energy and time."
+//                    . "<br>Please click the image below."));
+//            echo "</h4>";
+            echo "<br>";
+            echo "<br>";
+            ?> 
 
-        echo (_("I am a lazy programmer."));
-        echo "<br>";
-        echo (_("Here is a"));
-        ?>
-
-        <a href="/belonging/insert.php"><?php echo (_("web page")); ?></a>
-
-        <?php echo (_("I wrote to note down anything your want, to help your organize your things, thus to save your energy and time.")); ?> 
+            <div class = "row">
+                <div class = "col-sm-4">
+                    <a href = "pink floyd/index.html">
+                    </a>
+                </div>
+                <div class = "col-sm-4">
+                    <h4>
+                        <?php
+                        echo (_("I wrote a simple webpage to note down anything your want, "
+                                . "to help your organize your things, "
+                                . "thus to save your energy and time. "
+                                . "Please click the image below."));
+                        ?> 
+                    </h4>
+                    <a href="/belonging/insert.php">
+                        <img src="pic/organize.jpg" class="img-rounded" alt="Software for Organzing" style="width:350px;height:350px;border:10;"/>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="ajax/index.html">                        
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="pink floyd/index.html">
+                        <img src="pic/Pink Floyd The Wall.jpg" class="img-rounded" alt="Pink Floy The Wall" style="width:350px;height:350px;border:10;"/>                   
+                    </a>
+                </div>    
+                <div class="col-sm-4">
+                    <a href="ajax/index.html">
+                        <img src="pic/AFC_Ajax_Amsterdam.png" class="img-rounded" alt="AFC Ajax Amsterdam" style="width:350px;height:350px;border:10;"/>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="/belonging/insert.php">                       
+                        
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <a href="wuhan/index.php">                       
+                        <img src="pic/wuhan.jpg" class="img-rounded" alt="Wuhan" style="width:700px;height:350px;border:10;"/>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="wuhan/index.php">                       
+                        <img src="pic/hsyfz.jpg" class="img-rounded" alt="Wuhan" style="width:350px;height:350px;border:10;"/>
+                    </a>
+                </div>
+            </div>
         </div>
-        
+
+
         <!-- Start of StatCounter Code for Default Guide -->
         <script type="text/javascript">
             var sc_project = 9104726;
