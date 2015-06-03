@@ -47,8 +47,8 @@ if ($lang == 1) {
     textdomain("es");
 }
 
-echo " ";
+//echo " ";
 // Print a test message 
-echo (gettext("Hello"));
+//echo (gettext("Hello"));
 ?>
 
