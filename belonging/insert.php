@@ -19,6 +19,10 @@ and open the template in the editor.
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <link rel="stylesheet" type="text/css" href="thousestyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <title></title>
         <script>
             function insertRecord()
@@ -77,6 +81,7 @@ and open the template in the editor.
         </script>
     </head>
     <body>
+        <div class="container">
         <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
@@ -84,6 +89,7 @@ and open the template in the editor.
         require_once '../inc/database.php';
         //require_once '../inc/gettext.php';
         ?>
+        
         <form name="input" id="input">
             <table>
                 <tr>
@@ -159,5 +165,6 @@ and open the template in the editor.
         <div id='recAdded'></div>
         <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
         <?php echo (_("Hello")) . "<br>"; ?>
+        </div>
     </body>
 </html>

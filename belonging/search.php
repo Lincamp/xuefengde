@@ -14,6 +14,10 @@ if (!isset($_SESSION['myusername'])) {
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <link rel="stylesheet" type="text/css" href="thousestyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <title>Search</title>
         <script>
             function searchRecord()
@@ -57,17 +61,19 @@ if (!isset($_SESSION['myusername'])) {
 
     <body>
         <!--?php //include_once("../inc/analyticstracking.php") ?-->
+        <div class="container">
         <?php
         require 'menu.php';
         require '../inc/database.php';
 //$con = connect_db();
         ?>
-
-        <form name="input">
-            Where have I put my: <input type="text" name="item" id="item">
-            <input type='button' onclick='searchRecord()' 
-                   value='Submit'>
-        </form>
-        <div id="resultList"><?php echo (_("Result table")); ?></div>
+        
+            <form name="input">
+                Where have I put my: <input type="text" name="item" id="item">
+                <input type='button' onclick='searchRecord()' 
+                       value='Submit'>
+            </form>
+            <div id="resultList"><?php echo (_("Result table")); ?></div>
+        </div>
     </body>
 </html>
