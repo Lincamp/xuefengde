@@ -85,6 +85,7 @@ and open the template in the editor.
         <?php include_once("../inc/analyticstracking.php") ?>    
         <?php
         require '../inc/analyticstracking.php';
+        require_once '../menu.php';
         require_once 'menu.php';
         require_once '../inc/database.php';
         //require_once '../inc/gettext.php';

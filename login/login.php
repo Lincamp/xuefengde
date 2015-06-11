@@ -7,10 +7,10 @@ session_start();
 ?>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">        
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="../belonging/thousestyle.css">
+        <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../belonging/thousestyle.css"-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@ session_start();
         <div class="container">
 
             <?php
-            require '../inc/database.php';
+            require_once '../inc/database.php';
 //include("config.php");
             $con = connect_db();
 
@@ -70,34 +70,66 @@ session_start();
                 }
             }
             ?>
-            <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-                <tr>
-                <form name="form1" method="post" action="login.php">
-                    <td>
-                        <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-                            <tr>
-                                <td colspan="3"><strong>Member Login </strong></td>
-                            </tr>
-                            <tr>
-                                <td width="78">Username</td>
-                                <td width="6">:</td>
-                                <td width="294"><input name="myusername" type="text" id="myusername"></td>
-                            </tr>
-                            <tr>
-                                <td>Password</td>
-                                <td>:</td>
-                                <td><input name="mypassword" type="password" id="mypassword"></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td><input type="submit" name="Submit" value="Login"></td>
-                            </tr>
-                        </table>
-                    </td>
-                </form>
-                </tr>
-            </table>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-2">                    
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-8">
+                    <form class="form" method="post" action="login.php">
+                        <div class="form-group">
+                            <strong>Member Login </strong><br><br>
+                            <label for="myusername">Username or Email</label>
+                            <input name="myusername" type="text" id="myusername" class="form-control" placeholder="Username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="mypassword">Password</label>
+                            <input name="mypassword" type="password" id="mypassword" class="form-control" placeholder="Password" />
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        <button type="submit" name="Login" value="Login" class="btn btn-primary">Login</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-2">                    
+                </div>
+            </div>
+
+            <?php
+//            <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+//                <tr>
+//                <form name="form1" method="post" action="login.php">
+//                    <td>
+//                        <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+//                            <tr>
+//                                <td colspan="3"><strong>Member Login </strong></td>
+//                            </tr>
+//                            <tr>
+//                                <td width="78">Username</td>
+//                                <td width="6">:</td>
+//                                <td width="294"><input name="myusername" type="text" id="myusername"></td>
+//                            </tr>
+//                            <tr>
+//                                <td>Password</td>
+//                                <td>:</td>
+//                                <td><input name="mypassword" type="password" id="mypassword"></td>
+//                            </tr>
+//                            <tr>
+//                                <td>&nbsp;</td>
+//                                <td>&nbsp;</td>
+//                                <td><input type="submit" name="Submit" value="Login"></td>
+//                            </tr>
+//                        </table>
+//                    </td>
+//                </form>
+//                </tr>
+//            </table>
+            ?>
+
+
         </div>
     </body>
 </html>

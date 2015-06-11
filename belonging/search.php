@@ -63,8 +63,9 @@ if (!isset($_SESSION['myusername'])) {
         <!--?php //include_once("../inc/analyticstracking.php") ?-->
         <div class="container">
         <?php
-        require 'menu.php';
-        require '../inc/database.php';
+        require_once '../menu.php';
+        require_once 'menu.php';
+        require_once '../inc/database.php';
 //$con = connect_db();
         ?>
         

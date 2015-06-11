@@ -13,46 +13,17 @@ and open the template in the editor.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="../belonging/thousestyle.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <!--link rel="stylesheet" type="text/css" href="../belonging/thousestyle.css"-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <title></title>
         <script>
-// When the browser is ready...
-//  $(function() {
-//  
-//    // Setup form validation on the #register-form element
-//    $("#register-form").validate({
-//    
-//        // Specify the validation rules
-//        rules: {
-//            username: "required",
-//            email: {
-//                required: true,
-//                email: true
-//            },
-//            password: {
-//                required: true,
-//                minlength: 5
-//            }
-//        },
-//        
-//        // Specify the validation error messages
-//        messages: {
-//            username: "Please enter your user name",            
-//            password: {
-//                required: "Please provide a password",
-//                minlength: "Your password must be at least 5 characters long"
-//            },
-//            email: "Please enter a valid email address"
-//        },
-//        
-//        submitHandler: function(form) {
-//            form.submit();
-//        }
-//    });           
             function insertRecord()
-            {
+            {                                    
                 var x = document.forms["register-form"]["username"].value;
                 if (x == null || x == "")
                 {
@@ -101,15 +72,49 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-        <?php include_once("../inc/analyticstracking.php") ?>    
-        <?php
-        require '../inc/analyticstracking.php';
-        require_once '../menu.php';
-        require_once '../inc/database.php';
-        //require_once '../inc/gettext.php';
-        ?>
+        <div class="container">
+            <?php
+            require_once '../inc/analyticstracking.php';
+            require_once '../menu.php';
+            require_once '../inc/database.php';
+            //require_once '../inc/gettext.php';
+            ?>
 
-        <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-2">                    
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-8">
+                    <form class="form" name="input" id="register-form" novalidate="novalidate">
+                        <div class="form-group">
+                            <strong>Member Register</strong><br><br>
+                            <label for="email">*Email</label>
+                            <input name="email" type="text" id="email" class="form-control" placeholder="Email" />
+                        </div>
+                        <div class="form-group">                            
+                            <label for="mysername">Username</label>
+                            <input name="username" type="text" id="username" class="form-control" placeholder="Username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="nameField">*Password</label>
+                            <input name="password" type="password" id="password" class="form-control" placeholder="Password" />
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        <button type='button' name="Sign Up" value="Sign Up" class="btn btn-primary" onclick="insertRecord()">Sign Up</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-2">                    
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
             <tr>        
             <form name="input" id="register-form" novalidate="novalidate">
                 <td>
@@ -146,9 +151,8 @@ and open the template in the editor.
                 </td>
             </form>
         </tr>
-    </table>
-    <div id='recAdded'></div>
+    </table-->
+
     <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
-    <?php echo (_("Hello")) . "<br>"; ?>
 </body>
 </html>

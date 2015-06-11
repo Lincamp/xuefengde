@@ -34,6 +34,7 @@ if (!isset($_SESSION['myusername'])) {
     <body>
         <div class="container">
             <?php
+            require_once '../menu.php';
             require_once 'menu.php';
             require_once '../inc/database.php';
             $con = connect_db();
