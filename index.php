@@ -29,16 +29,18 @@ and open the template in the editor.
             ?> 
 
             <div class = "row">
-                <div class = "col-sm-4">
-                    <a href = "pink floyd/index.html">
+                <div class = "col-md-4 col-sm-6 col-xs-12">
+                    <a href = "#">                        
                     </a>
                 </div>
-                <div class = "col-sm-4">
-                    <h4>
+                <div class = "col-md-4 col-sm-6 col-xs-12">
+                    <h4 style="text-align:center">
                         <?php
-                        echo (_("I wrote a simple webpage to note down anything your want, "
-                                . "to help your organize your things, "
-                                . "thus to save your energy and time. "
+                        //echo (_("I wrote a simple webpage to note down anything your want, "
+                        //        . "to help your organize your things, "
+//                                . "thus to save your energy and time. "
+//                                . "Please click the image below."));
+                        echo (_("Try my software!<br>"
                                 . "Please click the image below."));
                         ?> 
                     </h4>
@@ -46,37 +48,39 @@ and open the template in the editor.
                         <img src="pic/organize.jpg" class="img-rounded" alt="Software for Organzing" style="width:350px;height:350px;border:10;"/>
                     </a>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <a href="ajax/index.html">                        
                     </a>
                 </div>
             </div>
+             
+            <br><br>
+            
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-3 col-sm-4 col-xs-6">
                     <a href="pink floyd/index.html">
-                        <img src="pic/Pink Floyd The Wall.jpg" class="img-rounded" alt="Pink Floy The Wall" style="width:350px;height:350px;border:10;"/>                   
+                        <img src="pic/Pink Floyd The Wall.jpg" class="img-rounded" alt="Pink Floy The Wall" style="width:300px;height:300px;border:10;"/>                   
                     </a>
                 </div>    
-                <div class="col-sm-4">
+                <div class="col-md-3 col-sm-4 col-xs-6">
                     <a href="ajax/index.html">
-                        <img src="pic/AFC_Ajax_Amsterdam.png" class="img-rounded" alt="AFC Ajax Amsterdam" style="width:350px;height:350px;border:10;"/>
+                        <img src="pic/AFC_Ajax_Amsterdam.png" class="img-rounded" alt="AFC Ajax Amsterdam" style="width:300px;height:300px;border:10;"/>
                     </a>
                 </div>
-                <div class="col-sm-4">
-                    <a href="/belonging/insert.php">                       
-                        
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="wuhan/index.php">                       
+                        <img src="pic/wuhan.jpg" class="img-rounded" alt="Wuhan" style="width:600px;height:300px;border:10;"/>
                     </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-md-3 col-sm-4 col-xs-6">
                     <a href="wuhan/index.php">                       
-                        <img src="pic/wuhan.jpg" class="img-rounded" alt="Wuhan" style="width:700px;height:350px;border:10;"/>
+                        <img src="pic/hsyfz.jpg" class="img-rounded" alt="Wuhan" style="width:300px;height:300px;border:10;"/>
                     </a>
                 </div>
-                <div class="col-sm-4">
-                    <a href="wuhan/index.php">                       
-                        <img src="pic/hsyfz.jpg" class="img-rounded" alt="Wuhan" style="width:350px;height:350px;border:10;"/>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="#">
                     </a>
                 </div>
             </div>
