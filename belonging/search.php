@@ -62,19 +62,23 @@ if (!isset($_SESSION['myusername'])) {
     <body>
         <!--?php //include_once("../inc/analyticstracking.php") ?-->
         <div class="container">
-        <?php
-        require_once '../menu.php';
-        require_once 'menu.php';
-        require_once '../inc/database.php';
-//$con = connect_db();
-        ?>
-        
-            <form name="input">
-                Where have I put my: <input type="text" name="item" id="item">
-                <input type='button' onclick='searchRecord()' 
-                       value='Submit'>
-            </form>
-            <div id="resultList"><?php echo (_("Result table")); ?></div>
-        </div>
+            <?php
+            require_once '../menu.php';
+            require_once 'menu.php';
+            require_once '../inc/database.php';
+            ?>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4><?php echo _("This page is dedicated to managing my belongings."); ?></h4>
+                </div>
+                <div class="panel-body">
+                    <form name="input">
+                        Where have I put my: <input type="text" name="item" id="item">
+                        <input type='button submit'  name="Search" value="Search" class="btn btn-primary btn-sm" onclick='searchRecord()' value='Submit'>
+                        <!--button type="submit" name="Search" value="Search" class="btn btn-primary btn-sm" onclick='searchRecord()'>Search</button-->
+                    </form>
+                    <div id="resultList"><?php //echo (_("Result table"));  ?></div>
+                </div>
+            </div>
     </body>
 </html>

@@ -153,6 +153,6 @@ and open the template in the editor.
         </tr>
     </table-->
 
-    <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
+    <div id='ajaxDiv'><?php // echo (_("Your result will display here")); ?></div> 
 </body>
 </html>

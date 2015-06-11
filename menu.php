@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="?locale=es_ES">Español</a> &nbsp;&nbsp;&nbsp;
 
         <!--a href="../login/login.php">login</a-->
-        <button type="button" class="btn btn-default btn-xs"><a href="../login/register.php">register</a></button>
+        <button type="button" class="btn btn-default btn-xs"><a href="../login/register.php">Register</a></button>
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Login</button>
         <div class="modal fade" id="myModal" role="dialog">
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <input type="checkbox"> Remember me
                                         </label>
                                     </div>
-                                    <button type="submit" name="Submit" value="Login" class="btn btn-primary">Submit</button>
+                                    <button type="submit" name="Submit" value="Login" class="btn btn-primary">Sign in</button>
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                 </form>
                             </div>                            

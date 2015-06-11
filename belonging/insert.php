@@ -82,90 +82,115 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-        <?php include_once("../inc/analyticstracking.php") ?>    
-        <?php
-        require '../inc/analyticstracking.php';
-        require_once '../menu.php';
-        require_once 'menu.php';
-        require_once '../inc/database.php';
-        //require_once '../inc/gettext.php';
-        ?>
-        
-        <form name="input" id="input">
-            <table>
-                <tr>
-                    <td>
-                        <select name="number" id="number">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="100">100</option><br>
-                        </select>
-                    </td>
-                    <td>
-                        <?php echo (_("Item name")); ?>:*
-                        <input type="text" name="itemname" id="itemname">
-                    </td>
-                    <td>
-                        <?php echo (_("Type")); ?>:
-                        <select name="type" id="type">
-                            <option value=""></option>    
-                            <option value="clothes"><?php echo (_("clothes")); ?></option>
-                            <option value="food"><?php echo (_("food")); ?></option>
-                            <option value="electronic device"><?php echo (_("electronic device")); ?></option>
-                            <option value="stationary"><?php echo (_("stationary")); ?></option>
-                            <option value="others"><?php echo (_("others")); ?></option>
-                        </select><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="position" id="position">
-                            <option value="in"><?php echo (_("in")); ?></option>
-                            <option value="on"><?php echo (_("on")); ?></option>
-                            <option value="under"><?php echo (_("under")); ?></option>
-                            <option value="in front of"><?php echo (_("in front of")); ?></option>
-                            <option value="behind"><?php echo (_("behind")); ?></option>
-                        </select>
-                    </td>
-                    <td>
-                        Container: <input type="text" name="container" id="container">
-                    </td>
-                    <td>
-                        <?php echo (_("Room")); ?>:
-                        <select name="room" id="room">
-                            <option value="living room"><?php echo (_("living room")); ?></option>
-                            <option value="bed room"><?php echo (_("bed room")); ?></option>
-                            <option value="storage room"><?php echo (_("storage room")); ?></option>
-                            <option value="kitchen"><?php echo (_("kitchen")); ?></option>
-                            <option value="bath room"><?php echo (_("bath room")); ?></option>
-                        </select><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="center">
-                        <?php echo (_("Comment")); ?>: <input type="text" name="comment" id="comment"><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="center">
-                        <input type='button' onclick='insertRecord()' 
-                               value='Submit'/><br>
-                    </td>
-                </tr>
-            </table>
-        </form>
+            <?php include_once("../inc/analyticstracking.php") ?>    
+            <?php
+            require '../inc/analyticstracking.php';
+            require_once '../menu.php';
+            require_once 'menu.php';
+            require_once '../inc/database.php';
+            //require_once '../inc/gettext.php';
+            ?>
 
-        <div id='recAdded'></div>
-        <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
-        <?php echo (_("Hello")) . "<br>"; ?>
-        </div>
-    </body>
-</html>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4><?php echo _("This page is dedicated to managing my belongings."); ?></h4>
+                </div>
+                <div class="panel-body">
+
+                    <form name="input" id="input">
+                        <table>
+                            <div class = "row">
+                                <div class = "col-md-1 col-sm-1 col-xs-1">
+                                </div>
+                                <div class = "col-md-10 col-sm-10 col-xs-10">
+
+
+
+                                    <tr>
+                                        <td>
+                                            <select name="number" id="number">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="100">100</option><br>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <?php echo (_("Item name")); ?>:*
+                                            <input type="text" name="itemname" id="itemname">
+                                        </td>
+                                        <td>
+                                            <?php echo (_("Type")); ?>:
+                                            <select name="type" id="type">
+                                                <option value=""></option>    
+                                                <option value="clothes"><?php echo (_("clothes")); ?></option>
+                                                <option value="food"><?php echo (_("food")); ?></option>
+                                                <option value="electronic device"><?php echo (_("electronic device")); ?></option>
+                                                <option value="stationary"><?php echo (_("stationary")); ?></option>
+                                                <option value="others"><?php echo (_("others")); ?></option>
+                                            </select><br>
+                                        </td>
+                                    </tr>
+                                </div> 
+                                <div class = "col-md-1 col-sm-1 col-xs-1">
+                                </div>
+
+                                <div class = "row">
+                                    <div class = "col-md-1 col-sm-1 col-xs-1">
+                                    </div>
+                                    <div class = "col-md-10 col-sm-10 col-xs-10">
+                                        <tr>
+                                            <td>
+                                                <select name="position" id="position">
+                                                    <option value="in"><?php echo (_("in")); ?></option>
+                                                    <option value="on"><?php echo (_("on")); ?></option>
+                                                    <option value="under"><?php echo (_("under")); ?></option>
+                                                    <option value="in front of"><?php echo (_("in front of")); ?></option>
+                                                    <option value="behind"><?php echo (_("behind")); ?></option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                Container: <input type="text" name="container" id="container">
+                                            </td>
+                                            <td>
+                                                <?php echo (_("Room")); ?>:
+                                                <select name="room" id="room">
+                                                    <option value="living room"><?php echo (_("living room")); ?></option>
+                                                    <option value="bed room"><?php echo (_("bed room")); ?></option>
+                                                    <option value="storage room"><?php echo (_("storage room")); ?></option>
+                                                    <option value="kitchen"><?php echo (_("kitchen")); ?></option>
+                                                    <option value="bath room"><?php echo (_("bath room")); ?></option>
+                                                </select><br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" align="center">
+                                                <?php echo (_("Comment")); ?>: <input type="text" name="comment" id="comment"><br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" align="center">
+                                                <input type='button' class="btn btn-primary btn-sm" onclick='insertRecord()' value='Insert'/><br>
+                                            </td>
+                                        </tr>
+                                    </div>
+                                    <div class = "col-md-1 col-sm-1 col-xs-1">                    
+                                    </div>
+                                    </table>
+                                    </form>
+
+                                    <div id='recAdded'></div>
+                                    <div id='ajaxDiv'><?php echo (_("Your result will display here")); ?></div> 
+                                    <?php echo (_("Hello")) . "<br>"; ?>
+                                </div>
+                            </div>
+                            </div>
+                            </body>
+                            </html>
