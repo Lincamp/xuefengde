@@ -44,7 +44,7 @@ and open the template in the editor.
                                 . "Please click the image below."));
                         ?> 
                     </h4>
-                    <a href="/belonging/insert.php">
+                    <a href="/belonging/search.php">
                         <img src="pic/organize.jpg" class="img-rounded" alt="Software for Organzing" style="width:350px;height:350px;border:10;"/>
                     </a>
                 </div>

@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog  modal-sm">
                 <div class="modal-content">
-
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" style="text-align:left">Sign in</h4>
@@ -93,20 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <button type="button" class="btn btn-warning btn-xs"  ><a href="../index.php">Log out</a></button>        
+        <button type="button" class="btn btn-warning btn-xs"  ><a href="login/login.php">Log out</a></button>        
     </div>
     <br>
 </div>
-
-
-
-<div align="right">
-    <span align="left">
-
-    </span>
-    <span align="right">
-
-    </span>
-</div>
-
-<h1><?php //echo _("This page is dedicated to managing my belongings.");              ?></h1>

@@ -72,8 +72,11 @@ if (!isset($_SESSION['myusername'])) {
                     <h4><?php echo _("This page is dedicated to managing my belongings."); ?></h4>
                 </div>
                 <div class="panel-body">
-                    <form name="input">
-                        Where have I put my: <input type="text" name="item" id="item">
+                    <form name="input" class="form-inline" role="form">
+                        <div class="form-group">
+                        <label for="item">Where have I put my: </label>                            
+                        <input type="text" name="item" id="item" class="form-control" placeholder="example: shoe">
+                        </div>
                         <input type='button submit'  name="Search" value="Search" class="btn btn-primary btn-sm" onclick='searchRecord()' value='Submit'>
                         <!--button type="submit" name="Search" value="Search" class="btn btn-primary btn-sm" onclick='searchRecord()'>Search</button-->
                     </form>
