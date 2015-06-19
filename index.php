@@ -53,9 +53,9 @@ and open the template in the editor.
                     </a>
                 </div>
             </div>
-             
+
             <br><br>
-            
+
             <div class="row">
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <a href="pink floyd/index.html">

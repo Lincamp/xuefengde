@@ -1,4 +1,8 @@
 <?php
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 require_once 'inc/gettext.php';
 //echo 'This is a included message <br>';
 /*
@@ -12,7 +16,7 @@ require_once 'inc/database.php';
 $con = connect_db();
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['myusername'])) {
     $myusername = addslashes($_POST['myusername']);
     $mypassword = addslashes($_POST['mypassword']);
 
@@ -22,12 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
-        $_SESSION['myusername'] = "myusername";
-        $_SESSION['mypassword'] = "mypassword";
+        $_SESSION['myusername'] = "$myusername";
+        $_SESSION['mypassword'] = "$mypassword";
         $_SESSION['login_user'] = $myusername;
-
-//        echo "##" . $_SESSION['url'] . "##";
-//        echo "count: $count <br>";
     } else {
         $error = "Your Login Name or Password is invalid";
         echo $error;
@@ -47,6 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="?locale=zh_CN">中文</a> |
         <a href="?locale=es_ES">Español</a> &nbsp;&nbsp;&nbsp;
 
+        <?php
+        if (isset($_SESSION['myusername'])) {
+            echo "Hi, " . $_SESSION['myusername'];
+        } else {
+            echo "Hi, Guest";
+        }
+        echo "&nbsp;";
+        ?>
         <!--a href="../login/login.php">login</a-->
         <button type="button" class="btn btn-default btn-xs"><a href="../login/register.php">Register</a></button>
         <!-- Trigger the modal with a button -->
@@ -92,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <button type="button" class="btn btn-warning btn-xs"  ><a href="login/login.php">Log out</a></button>        
+        <button type="button" class="btn btn-warning btn-xs"  ><a href="login/logout.php">Log out</a></button>        
     </div>
     <br>
 </div>

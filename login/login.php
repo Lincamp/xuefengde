@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 //$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 //if (!session_is_registered(myusername)) {
 //    header("location:../login/login.php");
@@ -27,7 +29,7 @@ session_start();
 
             require_once '../menu.php';
 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if ($_SERVER["REQUEST_METHOD"] == "POST"  && !isset($_SESSION['myusername'])) {
 // username and password sent from Form 
                 $myusername = addslashes($_POST['myusername']);
                 $mypassword = addslashes($_POST['mypassword']);
@@ -46,9 +48,9 @@ session_start();
 // If result matched $myusername and $mypassword, table row must be 1 row
                 if ($count == 1) {
 //        session_register("myusername");
-                    $_SESSION['myusername'] = "myusername";
+                    $_SESSION['myusername'] = "$myusername";
 //        session_register("mypassword");
-                    $_SESSION['mypassword'] = "mypassword";
+                    $_SESSION['mypassword'] = "$mypassword";
                     $_SESSION['login_user'] = $myusername;
 
                     echo "##" . $_SESSION['url'] . "##";
