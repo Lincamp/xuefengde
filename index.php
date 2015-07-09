@@ -1,3 +1,9 @@
+<?php
+if (session_status() != PHP_SESSION_ACTIVE) {    
+    session_start();
+//    echo "index.php session start <br>";
+}
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -18,12 +24,6 @@ and open the template in the editor.
             <?php
             require 'menu.php';
 
-//        session_start();
-//        $_SESSION['url'] = $_SERVER['REQUEST_URI'];
-//            echo "<h4>";
-//            echo (_("I wrote a simple webpage to note down anything your want, to help your organize your things, thus to save your energy and time."
-//                    . "<br>Please click the image below."));
-//            echo "</h4>";
             echo "<br>";
             echo "<br>";
             ?> 

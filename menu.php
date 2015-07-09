@@ -1,6 +1,15 @@
 <?php
-if (session_status() != PHP_SESSION_ACTIVE) {
-    session_start();
+//if (session_status() != PHP_SESSION_ACTIVE) {
+//    echo "menu.php session start <br>";
+//    session_start();
+//}
+
+if (isset($_GET['logoff'])) {
+    $_SESSION = array();
+    session_destroy();
+
+    header("Location:http://www.xuefeng.de/index.php");
+    exit;
 }
 
 require_once 'inc/gettext.php';
@@ -101,7 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['myusername'])) {
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <button type="button" class="btn btn-warning btn-xs"  ><a href="login/logout.php">Log out</a></button>        
+        <button type="button" class="btn btn-warning btn-xs"  ><a href="?logoff">Log out</a></button>    
+        <!-- /.modal --  href="login/logout.php -->
     </div>
     <br>
 </div>
