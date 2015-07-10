@@ -5,6 +5,9 @@ if (!isset($_SESSION['myusername'])) {
 }
 ?>
 <!DOCTYPE html>
+<?php
+$dirName = dirname(__FILE__);
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">

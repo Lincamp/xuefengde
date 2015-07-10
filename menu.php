@@ -21,6 +21,7 @@ require_once 'inc/gettext.php';
 ?>
 <?php
 require_once 'inc/database.php';
+require_once 'inc/function.php';
 //include("config.php");
 $con = connect_db();
 
@@ -110,8 +111,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['myusername'])) {
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <button type="button" class="btn btn-warning btn-xs"  ><a href="?logoff">Log out</a></button>    
-        <!-- /.modal --  href="login/logout.php -->
+        <!--button type="button" class="btn btn-warning btn-xs"  ><a href="?logoff">Log out</a></button-->  
+        <?php
+        $logoutpath = getAbsPath($dirName, "login/logout.php");
+//    echo $logoutpath . "<br>";
+        ?>
+        <button type="button" class="btn btn-warning btn-xs"  ><a href=<?php echo $logoutpath; ?>>Log out</a></button>
     </div>
     <br>
 </div>
+<?php
+//<button type="button" class="btn btn-warning btn-xs"  ><a href="login/logout.php">Log out</a></button>
+?>

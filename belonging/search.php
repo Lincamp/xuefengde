@@ -9,7 +9,9 @@ if (!isset($_SESSION['myusername'])) {
 }
 ?>
 <!DOCTYPE html>
-
+<?php
+$dirName = dirname(__FILE__);
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -41,7 +43,7 @@ if (!isset($_SESSION['myusername'])) {
                 {// code for IE6, IE5
                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.onreadystatechange = function()
+                xmlhttp.onreadystatechange = function ()
                 {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                     {
@@ -59,7 +61,7 @@ if (!isset($_SESSION['myusername'])) {
         </script>
     </head>
 
-    <body>
+    <body>     
         <!--?php //include_once("../inc/analyticstracking.php") ?-->
         <div class="container">
             <?php
@@ -74,13 +76,13 @@ if (!isset($_SESSION['myusername'])) {
                 <div class="panel-body">
                     <form name="input" class="form-inline" role="form">
                         <div class="form-group">
-                        <label for="item">Where have I put my: </label>                            
-                        <input type="text" name="item" id="item" class="form-control" placeholder="example: shoe">
+                            <label for="item">Where have I put my: </label>                            
+                            <input type="text" name="item" id="item" class="form-control" placeholder="example: shoe">
                         </div>
                         <input type='button submit'  name="Search" value="Search" class="btn btn-primary btn-sm" onclick='searchRecord()' value='Submit'>
                         <!--button type="submit" name="Search" value="Search" class="btn btn-primary btn-sm" onclick='searchRecord()'>Search</button-->
                     </form>
-                    <div id="resultList"><?php //echo (_("Result table"));  ?></div>
+                    <div id="resultList"><?php //echo (_("Result table"));    ?></div>
                 </div>
             </div>
     </body>
