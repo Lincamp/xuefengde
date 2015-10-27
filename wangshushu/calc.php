@@ -37,11 +37,11 @@ and open the template in the editor.
             function doMath(autoPost) {
 
                 var prePrice = 14.95;
-                var onePrice = 13.95;
-                var twoPrice = 13.95;
-                var threePrice = 13.95;
-                var oneplusPrice = 9.25;
-                var twoplusPrice = 9.25;
+                var onePrice = 14.95;
+                var twoPrice = 14.95;
+                var threePrice = 14.95;
+                var oneplusPrice = 9.95;
+                var twoplusPrice = 9.95;
 
                 var euroval = document.getElementById('eurocurr').value;
                 var EURO;
